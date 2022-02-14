@@ -1,0 +1,212 @@
+---
+title: Utiliser un forfait d'abonnement
+parent: Monetization
+---
+
+
+<article class="bcls-article">
+  <h1>Utiliser un forfait d'abonnement</h1>
+  <summary>Dans cette rubrique, vous apprendrez à utiliser un package d'abonnement vidéo créé à l'aide du <strong>Commerce</strong> onglet de Brightcove Beacon. Le forfait d'abonnement met en œuvre la monétisation SVOD (vidéo à la demande par abonnement). Pour plus de détails sur la création de l'abonnement, consultez le <a href="/monetization/creating-subscription-package.html">Création d'un forfait d'abonnement</a> document.
+  </summary>
+  <section class="bcls-section">
+    <h2 id="Overview">Aperçu</h2>
+    <p>
+      Un forfait d'abonnement définit comment un ensemble particulier de vidéos peut être acheté par vos applications' les clients. Le package d'abonnement doit être créé dans Brightcove Beacon et est détaillé dans le <a href="/monetization/creating-subscription-package.html">Création d'un forfait d'abonnement</a> document. Les champs personnalisés Video Cloud créés pour les vidéos d'un compte Video Cloud, comme détaillé dans le <a href="/syncing-with-video-cloud/vc-custom-fields.html"> Création de champs personnalisés Video Cloud </a> document. Plus précisément, le <a href="/syncing-with-video-cloud/vc-custom-fields.html#Rights_Management_fields"> Champs de gestion des droits </a> sera utilisé.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Understanding_the_rights_management_custom_fields"> Comprendre les champs personnalisés de gestion des droits </h2>
+    <p>Les champs personnalisés de gestion des droits se composent de :</p>
+    <ul>
+      <li>balise.rights.&lt;compteur&gt;.type</li>
+      <li>balise.rights.&lt;compteur&gt;.startDate</li>
+      <li>balise.rights.&lt;compteur&gt;.endDate</li>
+      <li>beacon.rights.&lt;compteur&gt;.devices</li>
+      <li>beacon.rights.&lt;compteur&gt;.locationsPermit</li>
+      <li>beacon.rights.&lt;counter&gt;.locationsDeny</li>
+      <li>balise.rights.&lt;counter&gt;.packageName</li>
+      <li>balise.rights.&lt;compteur&gt;.adConfiguration</li>
+    </ul>
+    <p>
+      Considérez d'abord le <strong>&lt;compteur&gt;</strong> partie de chaque nom. Ceci est inclus car vous pouvez créer plusieurs ensembles de champs de gestion des droits, et le <strong>&lt;compteur&gt;</strong> est utilisé afin que vous puissiez utiliser la syntaxe de type tableau pour regrouper les champs associés.
+    </p>
+    <p>
+      Par exemple, supposons que vous vouliez créer des forfaits d'abonnement pendant les vacances et avoir des forfaits pour :
+    </p>
+    <ul>
+      <li>Jour de la Terre</li>
+      <li>Journée de l'arbre</li>
+      <li>Nouvelles années</li>
+    </ul>
+    <p>
+      Vous devez accéder à Video Cloud et créer trois ensembles de champs de gestion des droits, en utilisant des valeurs de compteur de 0 à 2 (ou de 1 à 3 si vous préférez) qui apparaîtraient comme indiqué ici :
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/using-subscription-package/index-of-rights-fields.png" alt="index of rights fields" />
+    </figure>
+    <p>
+      Pour résumer, pour chaque package que vous souhaitez utiliser, vous devrez créer un ensemble "compteur" de champs de gestion des droits.
+    </p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Package_and_custom_field_similar_rights"> Droits similaires sur les packages et les champs personnalisés </h2>
+    <p>
+      Certains champs personnalisés auxquels vous pouvez affecter des données et qui s'appliquent à une vidéo lors de l'ingestion, peuvent ressembler à des champs de formulaire lors de la création de votre package dans Brightcove Beacon. Par exemple, le champ personnalisé <em>beacon.rights.&lt;counter&gt;.locationsDeny</em> et le paquet <strong>Emplacements refusés</strong> champ de formulaire peut sembler être en conflit. N'oubliez pas que lorsque l'on considère ces "conflits", il y a deux questions différentes qui sont posées, celles-ci étant : </p>
+    <ul>
+      <li>Les droits sur la vidéo lui permettent-ils de jouer ?</li>
+      <li>Un utilisateur est-il autorisé à souscrire au forfait ?</li>
+    </ul>
+    <p>
+      Considérez ces scénarios :
+    </p>
+    <ul>
+      <li>
+        Une date de fin dans le <em>balise.rights.&lt;compteur&gt;.endDate</em> champ personnalisé est postérieure à la date de fin du package lui-même. Cela signifie que les droits de la vidéo lui permettraient d'être visionnée jusqu'à la date de fin du champ personnalisé, mais l'utilisateur ne pourrait pas s'abonner au forfait qui aurait pu, par exemple, réduire le coût de visualisation de la vidéo.
+      </li>
+      <li>
+        Un package est créé avec des emplacements autorisés aux États-Unis, au Canada et au Mexique, et ce package est attribué à la vidéo dans le champ personnalisé <em>balise.rights.&lt;counter&gt;.packageName</em>. Également dans les champs personnalisés de la vidéo, UK est placé dans le
+        <em>beacon.rights.&lt;compteur&gt;.locationsPermit</em> champ personnalisé. Le package est attribué à la vidéo, mais le package ne peut pas être acheté au Royaume-Uni. La vidéo pourrait être diffusée au Royaume-Uni, mais elle ne pourrait pas faire partie du package pour un client britannique.
+      </li>
+      <li>
+        Un package est créé avec des emplacements autorisés aux États-Unis, au Canada et au Mexique. Dans les champs personnalisés, les États-Unis et le Canada sont ajoutés dans la vidéo <em>beacon.rights.&lt;counter&gt;.locationsDeny</em> champ personnalisé. Ici, les clients aux États-Unis, au Canada et au Mexique pourraient s'abonner au forfait, mais la vidéo spécifique où les États-Unis et le Canada se voient refuser des emplacements signifie que la vidéo ne peut pas être visionnée par les clients dans ces emplacements même si la vidéo est dans le package.
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Subscription_interval_support"> Prise en charge des intervalles d'abonnement
+    </h2>
+    <p>
+      Le tableau suivant indique les intervalles de temps pris en charge pour les abonnements récurrents pour chaque magasin : </p>
+    <table class="bcls-table">
+      <!-- <caption class="bcls-caption--table">Table Caption (optional <strong><caption class="bcls-caption--table"></strong>)</caption> -->
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Intervalle de temps</th>
+          <th>Apple Store</th>
+          <th>Google Play Store</th>
+          <th>Magasin Roku</th>
+          <th>Boutique Amazon</th>
+          <th>Bande</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>1 semaine</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td></td>
+          <td>Oui</td>
+          <td>Oui</td>
+        </tr>
+        <tr>
+          <td>1 mois</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td>Oui</td>
+        </tr>
+        <tr>
+          <td>3 mois</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td></td>
+          <td>Oui</td>
+          <td>Oui</td>
+        </tr>
+        <tr>
+          <td>6 mois</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td></td>
+          <td>Oui</td>
+          <td>Oui</td>
+        </tr>
+        <tr>
+          <td>1 an</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td>Oui</td>
+          <td>Oui</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Assigning_a_single_video_to_a_package"> Affectation d'une seule vidéo à un package
+    </h2>
+    <p>
+      Pour attribuer une seule vidéo à un package, vous devez utiliser Video Cloud Studio. Effectuez les étapes suivantes :
+    </p>
+    <ol class="bcls-tasklist">
+      <li>Dans Studio, accédez au <strong>Médias</strong> module.</li>
+      <li>
+        Cliquez sur le titre de la vidéo que vous ajoutez au package pour voir les propriétés de cette vidéo.
+      </li>
+      <li>
+        Faites défiler vers le bas jusqu'à ce que vous voyiez le <strong>Les champs personnalisés</strong> section sur le côté droit et cliquez sur le <strong>Éditer</strong> bouton.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/using-subscription-package/single-video-edit-fields.png" alt="index of rights fields" />
+        </figure>
+      </li>
+      <li>
+        Placez le nom du pack d'abonnement créé dans Brightcove Beacon dans le champ <code translate="No">beacon.rights.&lt;counter&gt;.packageName</code> champ.
+      </li>
+      <li>
+        Puisque vous utilisez un package, vous DEVEZ définir le <code translate="No">beacon.rights.&lt;counter&gt;.type</code> à <strong>SVOD</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/using-subscription-package/custom-fields.png" alt="index of rights fields" />
+        </figure>
+      </li>
+      <li>
+        Faites défiler la liste des champs personnalisés jusqu'en bas et cliquez sur le bouton <strong>sauvegarder</strong> bouton.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Assigning_a_single_video_to_a_package"> Affectation de plusieurs vidéos à un package </h2>
+    <p>
+      Pour attribuer plusieurs vidéos à un package, vous devez utiliser Video Cloud Studio. La capture d'écran suivante est utile lors de l'exécution des étapes :
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/using-subscription-package/multiple-video-edit.png" alt="index of rights fields" />
+    </figure>
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Dans Studio, accédez au <strong>Médias</strong> module et cochez la case devant chaque vidéo que vous souhaitez ajouter au package.
+      </li>
+      <li>Clique le <strong>Edition rapide</strong> bouton.</li>
+      <li>
+        Les <strong>Edition rapide</strong> apparaît sur le côté droit de l'écran, et vous pouvez y placer le nom du package d'abonnement créé dans Brightcove Beacon dans le <code translate="No">beacon.rights.&lt;counter&gt;.packageName</code> champ.
+      </li>
+      <li>
+        Puisque vous utilisez un package, vous DEVEZ définir le <code translate="No">beacon.rights.&lt;counter&gt;.type</code> à <strong>SVOD</strong>.
+      </li>
+      <li>
+        Au bas de la <strong>Edition rapide</strong> rubrique, cliquez sur le <strong>sauvegarder</strong> bouton.
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Ingesting_the_videos_into_Brightcove_Beacon"> Ingérer les vidéos dans Brightcove Beacon </h2>
+    <p>
+      Vous avez maintenant associé une ou des vidéos à votre forfait d'abonnement. Vous devez maintenant ingérer ces associations dans Brightcove Beacon. Pour le faire, suivez ces étapes:
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>Connectez-vous à Brightcove Beacon.</li>
+      <li>Cliquez sur l'icône de clé (Outils).</li>
+      <li>Dans la navigation de gauche, cliquez sur <strong>Ingestion</strong>.</li>
+      <li>Clique le <strong>Mettre à jour les vidéos Brightcove</strong> bouton.</li>
+      <li>
+        Si des erreurs sont signalées, vérifiez-les pour vous assurer qu'aucune n'est liée à votre forfait d'abonnement.
+      </li>
+      <li>
+        Si vous souhaitez que les nouvelles associations soient immédiatement actives dans Brightcove Beacon, vous devez vider le cache actuel. Pour ce faire, à partir de la navigation de gauche, cliquez sur <strong>Cacher</strong> , puis clique <strong>Purge du cache</strong>.
+      </li>
+    </ol>
+    <p>
+      Pour plus de détails sur les mesures prises dans cette section, consultez le <a href="/using-brightcove-beacon/tools.html">Utilisation des outils</a> document.
+    </p>
+  </section>
+</article>

@@ -1,0 +1,88 @@
+---
+title: Configuration des publicités pour Live SSAI avec un canal Brightcove Beacon
+description: 'Dans cette rubrique, vous apprendrez à définir des publicités SSAI en direct sur un canal Brightcove Beacon.'
+parent: Using Brightcove Beacon
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+    <summary>{{ page.description }}</summary>
+
+    <section class="bcls-section">
+        <aside class="bcls-aside bcls-aside--information">Ce processus de configuration des annonces en direct n'est nécessaire que si la chaîne en direct a été activée avec SSAI. Si ce n'est pas le cas, ces étapes ne sont pas nécessaires.</aside>
+        <h2 id="Prerequisites">Conditions préalables</h2>
+
+        <ul>
+            <li><a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html" target="_blank">Créez une chaîne en direct activée avec SSAI dans Video Cloud.</a></li>
+            <li><a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html#live" target="_blank">Créez et configurez le tag publicitaire dans Video Cloud.</a></li>
+            <li><a href="https://beacon.support.brightcove.com/using-brightcove-beacon/creating-a-channel.html" target="_blank">Créez un canal dans Brightcove Beacon.</a></li>
+            <li>Créez la configuration de la publicité dans Brightcove Beacon.</li>
+            <li>Définissez les droits et la programmation dans le canal.</li>
+        </ul>
+
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Prerequisites">Configuration de l'annonce Video Cloud avec Brightcove Beacon </h2>
+
+        <ol class="bcls-tasklist-restart">
+            <li>Dans Video Cloud Studio, sélectionnez le <strong>HABITENT</strong> module.</li>
+            <li>Créez ou ouvrez le canal Live SSAI que vous souhaitez utiliser avec Brightcove Beacon. </li>
+            <li>Dans le <strong>Salle de contrôle</strong> , Cliquez sur <strong>Publier et intégrer</strong> du panneau de gauche.
+                <figure class="bcls-figure">
+                    <img class="bcls-image--no-border" src="/assets/images/using-bcb/ssai-beacon/live-player-options.png" alt="" width="" height="" />
+                </figure>
+            </li>
+            <li>Dans le <strong>Options de lecteur en direct</strong> section, dans la liste déroulante, sélectionnez le <strong>Configuration de l'annonce</strong> vous voulez définir.</li>
+            <li>Une fois sélectionné un nouveau <strong>Code d'intégration standard</strong> apparaîtra. </li>
+            <li>Extraire le <strong>adConfigId</strong> en copiant une partie de l'URL attribuée à adConfigId, comme indiqué dans l'image.
+                <figure class="bcls-figure">
+                    <img class="bcls-image--no-border" src="/assets/images/using-bcb/ssai-beacon/configid.png" alt="" width="" height="" />
+                </figure>
+            </li>
+            
+        </ol>
+
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Prerequisites">Créer la publicité dans Brightcove Beacon</h2>
+
+        <ol class="bcls-tasklist-restart">
+            <li>Retournez sur la plate-forme Brightcove Beacon.</li>
+            <li>Cliquez sur <strong>Publicité</strong>.
+                <figure class="bcls-figure">
+                    <img class="bcls-image--no-border" src="/assets/images/using-bcb/ssai-beacon/paste-configid.png" alt="" width="" height="" />
+                </figure>
+            </li>
+            <li>Créez ou sélectionnez la configuration d'annonce que vous souhaitez définir. </li>
+            <li>Pour une nouvelle publicité, donnez-lui un <strong>Nom</strong>.</li>
+            <li>Assurez-vous que le <strong>Fournisseur</strong> est réglé sur <strong>Brightcove SSAI</strong>.</li>
+            <li>Dans le <strong>ID de configuration en direct</strong> champ, collez le <strong>adConfigId</strong> URL que vous avez copiée dans la section précédente de ce document.</li>
+            <li>Cliquez sur <strong>Créer une nouvelle publicité</strong>.</li>
+            
+        </ol>
+
+        </section>
+
+        <section class="bcls-section">
+            <h2 id="Prerequisites">Définition des droits et planification dans Brightcove Beacon</h2>
+            <ol class="bcls-tasklist-restart">
+                <li>Dans la navigation supérieure, cliquez sur <strong>Canaux</strong>.
+                    <figure class="bcls-figure">
+                        <img class="bcls-image--no-border" src="/assets/images/using-bcb/ssai-beacon/rigthsandsche.png" alt="" width="" height="" />
+                    </figure>
+                </li>
+                <li>Sélectionnez le canal dont vous souhaitez définir la configuration SSAI.</li>
+                <li>Clique le <strong>Droits et planification</strong> languette.</li>
+                <li>Dans <strong>Type de droits</strong> , sélectionnez <strong>Publicité - AVOD</strong>.</li>
+                <li>Dans <strong>Configuration de la publicité</strong> , dans la liste déroulante, sélectionnez la configuration d'annonce que vous venez de créer.</li>
+                <li>Cliquez sur <strong>Créer une nouvelle chaîne</strong> pour sauvegarder votre travail. 
+                    <figure class="bcls-figure">
+                        <img class="bcls-image--no-border" src="/assets/images/using-bcb/ssai-beacon/create-button.png" alt="" width="300" height="100" />
+                    </figure>
+                </li>
+            </ol>
+
+            </section>
+
+    </article>

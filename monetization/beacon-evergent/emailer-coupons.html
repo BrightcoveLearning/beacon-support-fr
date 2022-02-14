@@ -1,0 +1,232 @@
+---
+title: "Evergente : Description de l'emailer et des coupons : Cette rubrique fournit un guide pour gérer la génération d'emails et de coupons dans Evergent.
+parent: Beacon Advanced Monetization 
+grandparent: Monetization
+layout: staging
+---
+ <h1>{{ page.title }}</h1>
+
+<article class="bcls-article">
+	<summary>{{ page.description }}</summary>
+	<section class="bcls-section">
+		<h2 id="Introduction">introduction</h2>
+		<p>Le système de backoffice Evergent fournit des services pour vous aider à gérer votre entreprise. Dans cette rubrique, nous aborderons deux de ces services :</p>
+		<ul>
+			<li>L'emailer automatisé</li>
+			<li>Le gestionnaire de coupons</li>
+		</ul>
+	</section>
+	<section class="bcls-section">
+		<h2 id="emailer">E-mailer</h2>
+		<p>L'emailer vous permet de créer des modèles et des calendriers pour divers e-mails générés par le système. Les sections qui suivent détailleront les opérations de l'emailer.</p>
+	</section>
+	<section class="bcls-section">
+		<h2 id="message_types">Types de messages</h2>
+		<p>Evergent prend en charge les types de messages suivants :</p>
+		<dl>
+			<dt>Planification</dt>
+			<dd>Lorsque les tâches par lots sont planifiées dans l'administrateur système, un e-mail est envoyé à un administrateur.</dd>
+			<dt>Rappel d'expiration de carte de crédit</dt>
+			<dd>Lorsque la case "Rappel d'expiration de la carte de crédit" est cochée au niveau de l'entreprise, l'e-mail de rappel est envoyé aux clients lorsque leur carte de crédit est sur le point d'expirer (l'e-mail est généralement envoyé un mois avant l'expiration de la carte). Dans ce cas, le système utilisera le modèle de message d'e-mail de type « rappel d'expiration de carte de crédit ».</dd>
+			<dt>E-mails en masse</dt>
+			<dd>Si une entreprise souhaite planifier un e-mail promotionnel et spécifier une heure future d'exécution, le type d'e-mail en masse est utilisé. Ces types d'e-mails en masse peuvent être envoyés à un abonné d'unité commerciale, à un abonné d'une zone de marché spécifique ou à un service spécifique.</dd>
+			<dt>Transaction par carte de crédit</dt>
+			<dd>Lorsque la transaction de paiement par carte de crédit est effectuée par un abonné, les détails de la transaction seront envoyés par e-mail au client à l'aide de ce modèle d'e-mail.</dd>
+			<dt>Message d'événement</dt>
+			<dd>Les modèles d'e-mail de type message d'événement seront utilisés pour définir un modèle d'e-mail et les associer à la catégorie d'événement, ce qui permet de déclencher des notifications par e-mail aux abonnés une fois l'événement enregistré au niveau du compte.</dd>
+			<dt>Ad hoc</dt>
+			<dd>Le type de message ad hoc consiste à envoyer les messages individuels sans lien avec aucun mappage de catégorie d'événement.</dd>
+		</dl>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Emailers">E-mailers</h2>
+		<p>L'onglet Emailers est utilisé pour ajouter/modifier les modèles d'emails et planifier les emails pour les Business Units.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/emailers-tab.png" alt="Emailers Tab">
+			<figcaption class="bcls-caption--image">Onglet Emailers</figcaption>
+		</figure>
+		<h3>Ajout d'un nouvel e-mail</h3>
+		<p>Pour ajouter un nouvel e-mail, procédez comme suit :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Sur le <strong>E-mailers</strong> l'écran d'une Business Unit, cliquez sur le bouton Ajouter (<i data-feather="plus"></i>) icône.</li>
+			<li>
+				Dans le <strong>Détails de base</strong> section, entrez les détails requis, comme suit :
+				<ol style="list-style-type: lower-latin;">
+					<li>Sur le <strong>Titre</strong> champ, entrez le titre de l'e-mail.</li>
+					<li>Sur le <strong>Sujet du courriel</strong> champ, saisissez l'objet de l'e-mail.</li>
+					<li>Sélectionnez le type de message que vous définirez un e-mail à partir du <strong>Type de message</strong> la liste déroulante.</li>
+					<li>Dans le <strong>Courriel de l'administrateur</strong> champ, entrez l'identifiant de l'e-mail à partir duquel vous souhaitez que l'e-mail soit envoyé.</li>
+					<li>Dans le <strong>Nom de l'administrateur</strong> champ, entrez le nom de l'administrateur.</li>
+					<li>Sélectionnez le <strong>Catégorie d'événement</strong> dans la liste déroulante fournie.</li>
+					<li>
+						Entrez l'identifiant e-mail des personnes auxquelles vous souhaitez que l'e-mail soit envoyé dans le champ <strong>CC</strong> et <strong>Cci</strong> des champs. <aside class="bcls-aside bcls-aside--information">Noter: Vous pouvez spécifier plusieurs ID d'e-mail dans les champs CC et BCC en séparant chaque ID d'e-mail par une virgule.</aside>
+					</li>
+				</ol>
+			</li>
+			<li>Sélectionner <strong>Texte brut</strong> ou <strong>HTML</strong> pour envoyer l'e-mail dans le format sélectionné.</li>
+			<li>Dans le <strong>Message électronique/lettre d'information</strong> , dans la zone de texte Corps de l'e-mail, saisissez le modèle de message que vous souhaitez afficher dans l'e-mail du client.</li>
+			<li>Cliquez sur <strong>Aperçu</strong> à côté de la zone de texte pour afficher le message électronique au format Texte brut ou HTML.</li>
+			<li>
+				Clique le <strong>Créer</strong> bouton.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/new-emailer.png" alt="New Emailer">
+					<figcaption class="bcls-caption--image">Nouvel e-mailer</figcaption>
+				</figure>
+			</li>
+		</ol>
+		<h3>Mettre à jour un e-mailer</h3>
+		<ol class="bcls-tasklist-restart">
+			<li>Naviguez vers le <strong>E-mailer</strong> écran d'une Business Unit.</li>
+			<li>Dans le <strong>Liste des modèles d'e-mails</strong> section, cliquez sur le modèle d'e-mail que vous souhaitez modifier.</li>
+			<li>Les <strong>Mettre à jour l'expéditeur</strong> apparaît, apportez les modifications nécessaires dans les champs disponibles, puis cliquez sur <strong>Mettre à jour</strong>.</li>
+		</ol>
+		<aside class="bcls-aside bcls-aside--information">Notez que vous ne pouvez pas modifier les champs Type de message et Catégorie d'événement sur l'écran Mettre à jour l'e-mail.</aside>
+		<h3>Planifier des e-mails</h3>
+		<p>Vous pouvez programmer les e-mails pour les envoyer plus tard. Cet écran permet de planifier les e-mails en masse sur une base horaire spécifiée ou quotidiennement pour le DMA ou le service.</p>
+		<h4>Planification d'un e-mail</h4>
+		<ol class="bcls-tasklist-restart">
+			<li>Sur le <strong>E-mailers</strong> écran, sur le <strong>Modèles d'e-mails</strong> onglet, cliquez sur l'e-mail de type de message en tant qu'e-mails en masse.</li>
+			<li>Clique le <strong>Planifier les e-mails</strong> languette. La liste des e-mails programmés apparaît.</li>
+			<li>
+				Pour planifier un e-mail, cliquez sur le bouton Ajouter (<i data-feather="plus"></i>) pour ouvrir la boîte de dialogue Planifier un e-mail.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/schedule-email.png" alt="Schedule Email">
+					<figcaption class="bcls-caption--image">Programmer l'e-mail</figcaption>
+				</figure>
+			</li>
+			<li>Saisissez l'identifiant de l'e-mail dans le champ <strong>Envoyer un courrier à</strong> champ.</li>
+			<li>Clique le <strong>Temps d'exécution</strong> champ pour sélectionner la date et l'heure du programme.</li>
+			<li>Pour programmer des e-mails quotidiennement à la date et à l'heure sélectionnées, sélectionnez le <strong>Horaire quotidien</strong> case à cocher.</li>
+		</ol>
+		<h4>Supprimer un e-mail programmé</h4>
+		<ol class="bcls-tasklist-restart">
+			<li>Clique le <strong>Modèles d'e-mails</strong> onglet sous le <strong>E-mailers</strong> onglet dans la barre de menu de gauche.</li>
+			<li>Cliquez sur un e-mail en masse (type de message) que vous souhaitez supprimer.</li>
+			<li>
+				Les <strong>Mettre à jour l'expéditeur</strong> l'écran apparaît.
+			</li>
+			<li>
+				Clique le <strong>Planifier les e-mails</strong> languette.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/update-emailer.png" alt="Update Emailer">
+					<figcaption class="bcls-caption--image">Mettre à jour l'expéditeur</figcaption>
+				</figure>
+			</li>
+			<li>Cliquez sur le bouton Supprimer (<i data-feather="trash-2"></i>) icône dans le <strong>Actions</strong> colonne pour supprimer l'e-mail programmé de la <strong>Liste des e-mails programmés</strong>.</li>
+			<li></li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Coupon_generation">Génération de coupons</h2>
+		<p>L'autorisation de génération de coupons est basée sur l'autorisation de groupe BU de l'utilisateur. Les utilisateurs connectés disposant de cette autorisation peuvent générer et modifier les coupons.</p>
+		<h3>Ajouter un nouveau coupon/bon</h3>
+		<ol class="bcls-tasklist-restart">
+			<li>Clique le <strong>Bons de réduction</strong> du menu de gauche.</li>
+			<li>Sur le <strong>Bons de réduction</strong> l'écran d'une Business Unit, cliquez sur le <strong>Ajouter</strong> (<i data-feather="plus"></i>) icône. Les <strong>Bons de réduction</strong> l'écran par défaut apparaît.</li>
+			<li>
+				Cliquez sur <strong>Ajouter</strong> (<i data-feather="plus"></i>) pour générer le coupon.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/generate-coupon.png" alt="Generate Coupon">
+					<figcaption class="bcls-caption--image">Générer un coupon</figcaption>
+				</figure>
+			</li>
+			<li>
+				L'écran de génération de nouveau coupon/bon apparaît comme illustré ci-dessous.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/new-coupon-voucher.png" alt="New Coupon/Voucher">
+					<figcaption class="bcls-caption--image">Nouveau coupon/bon</figcaption>
+				</figure>
+			</li>
+			<li>
+				Saisissez les informations dans les champs comme suit :
+				<ol style="list-style-type: lower-alpha;">
+					<li><strong>Préfixe du coupon</strong>: Préfixe du Coupon (ex : TestC, Hal, CD, vendredi, etc.)</li>
+					<li><strong>Nom du lot</strong>: Nom du Lot pour les Coupons (Ex : Coupon test, Noël, etc.)</li>
+					<li><strong>Détaillant</strong>: Des coupons peuvent être générés sur la sélection de détaillants comme (AT&amp;T, Vodafone, Verizon, Idea, etc.)</li>
+					<li><strong>Date de début</strong>: La date à partir de laquelle le coupon est disponible pour l'utilisateur</li>
+					<li><strong>Date d'expiration</strong>: Les utilisateurs peuvent définir le jour d'expiration du coupon</li>
+					<li><strong>Demandeur de coupon</strong>: Indique le nom du demandeur qui a demandé les coupons</li>
+					<li>
+						<strong>Crédité en tant que recharge de portefeuille</strong>:
+						<ul>
+							<li>Pour générer le coupon pour le rechargement du portefeuille, cliquez sur l'interrupteur à bascule pour activer et saisir le montant</li>
+							<li>Pour générer le coupon en tant que bon, cliquez sur l'interrupteur à bascule pour le désactiver</li>
+						</ul>
+						<figure class="bcls-figure">
+							<img class="bcls-image" src="/assets/images/beacon-evergent/toggle-wallet-top-up.png" alt="Toggle for Wallet Top-Up">
+							<figcaption class="bcls-caption--image">Basculer pour le rechargement du portefeuille</figcaption>
+						</figure>
+					</li>
+					<li><strong>Type de remise</strong>: Définir le type de coupon - par exemple, gratuit, forfaitaire, forfaitaire, pourcentage, pourcentage de réduction et extension de validité</li>
+					<li><strong>Montant/Pourcentage</strong>: Pour le type sélectionné, le champ Montant/Pourcentage apparaît</li>
+					<li><strong>Période &amp; Durée</strong>: La Période du Coupon appliquée peut être un nombre de jours ou un nombre de mois, selon la sélection respective de la période que les Durées du Coupon impliquent</li>
+					<li><strong>Faire un préfixe comme code de coupon</strong>: Lorsque vous cochez cette case, le préfixe sera enregistré en tant que code de coupon</li>
+					<li><strong>Nombre de coupons</strong>: L'utilisateur peut fournir le nombre de coupons générés pour le lot. Dans le cas du « Préfixe en tant que code de coupon », le nombre de coupons sera « 1 »</li>
+					<li><strong>Priorité du coupon</strong>: Utilisé pour définir l'affichage du coupon générique sur la base d'un ordre de priorité tel qu'il est généré dans l'entreprise et mappé à un type d'abonnement et d'offre</li>
+					<li><strong>Longueur du coupon</strong>: Longueur du code promo que vous souhaitez générer</li>
+					<li><strong>Rachats multiples</strong>: Si ce commutateur à bascule est sélectionné, l'utilisateur peut définir les remboursements maximum pour un coupon</li>
+					<li><strong>Maximum de rachats</strong>: Permet le nombre de rachats pour un coupon</li>
+					<li><strong>Rachats multiples par utilisateur unique</strong> : la case à cocher permet aux clients d'échanger un seul coupon sur leur compte pour le nombre maximum d'échanges par utilisateur unique</li>
+					<li><strong>Rachats multiples par utilisateur unique</strong> : la case à cocher permet aux clients d'échanger un seul coupon sur leur compte pour le nombre maximum d'échanges par utilisateur unique</li>
+					<li><strong>Sensible aux majuscules et minuscules</strong>: Cochez la case si vous souhaitez générer des codes promo en majuscules</li>
+					<li><strong>est cadeau</strong>: Si la case est cochée, le coupon peut être donné à d'autres</li>
+					<li><strong>Héritable</strong>: Si la case est cochée, le coupon peut être héritable</li>
+					<li><strong>Tous les éléments sont-ils obligatoires</strong>: Si cette case est cochée, alors tous les éléments sont obligatoires</li>
+					<li><strong>Ignorer le mode de paiement</strong>: Si la case est cochée, le mode de paiement sera ignoré après l'application du coupon</li>
+					<li><strong>Description du coupon</strong>: Entrez la description du coupon</li>
+					<li><strong>Informations sur la campagne</strong>: Entrez les détails de la campagne</li>
+					<li><strong>Message de réussite</strong>: Entrez le message de réussite qui doit être affiché à l'utilisateur.</li>
+					<li><strong>Message d'alerte</strong>: Entrez le message d'avertissement qui doit être affiché à l'utilisateur</li>
+					<li><strong>Produits applicables</strong>: L'utilisateur peut sélectionner le non. des produits applicables au Coupon (Ex : Coupon plat 30% OFF pour le produit <strong>Néon</strong>)</li>
+					<li><strong>Forfaits applicables</strong>: L'utilisateur peut sélectionner le non. des packages d'application aux Coupons</li>
+					<li><strong>Types d'offres</strong>: L'utilisateur peut sélectionner les types d'offres pour les Coupons</li>
+					<li><strong>Modes de paiement applicables</strong>: L'utilisateur peut sélectionner les modes de paiement applicables pour le coupon</li>
+				</ol>
+			</li>
+			<li>Clique le <strong>Créer un coupon</strong> bouton pour générer des coupons (le temps de génération des coupons dépend également du nombre de coupons générés par l'utilisateur).</li>
+			<li>
+				Une fois les coupons générés, <strong>Coupons générés avec succès</strong> message s'affiche :
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/coupons-generated.png" alt="Coupons Generated">
+					<figcaption class="bcls-caption--image">Coupons générés</figcaption>
+				</figure>
+			</li>
+		</ol>
+		<h3>Recherche de coupons</h3>
+		<p>Recherchez les coupons en utilisant les différentes options. Pour rechercher les coupons, procédez comme suit :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Sur le <strong>Bons de réduction</strong> l'écran, entrez la valeur du champ pour rechercher par nom de lot, préfixe, code de coupon, statut, date d'expiration du/au.</li>
+			<li>
+				Cliquez sur le bouton Rechercher. Les résultats de la recherche de coupons sont affichés, comme indiqué ci-dessous.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/coupon-search-results.png" alt="Coupon Search Results">
+					<figcaption class="bcls-caption--image">Résultats de la recherche de coupons</figcaption>
+				</figure>
+			</li>
+			<li>
+				Cliquez sur le commutateur à bascule Activer la recherche avancée pour activer la recherche avancée.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/enable-advanced-coupon-search.png" alt="Enable Advanced Coupon Search">
+					<figcaption class="bcls-caption--image">Activer la recherche avancée de coupons</figcaption>
+				</figure>
+			</li>
+			<li>Vous pouvez rechercher avec un lot de coupons les produits applicables et les modes de paiement applicables répertoriés dans les listes. Pour rechercher avec un lot de coupons, cliquez sur le bouton Recherche par lot de coupons.</li>
+			<li>
+				Les coupons recherchés sont affichés dans la liste des résultats de la recherche, comme illustré ci-dessous.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/coupon-batch-search-results.png" alt="Coupon Batch Search Results">
+					<figcaption class="bcls-caption--image">Résultats de la recherche par lots de coupons</figcaption>
+				</figure>
+			</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Related_topics">Rubriques connexes</h2>
+		<ul>
+			<li><a href="/monetization/beacon-evergent/overview-beacon-evergent.html">Aperçu: Monétisation avancée des balises</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-finding-accounts.html">Localiser des comptes dans Evergent CRM</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-managing-account-details.html">Evergent : Gérer les détails du compte</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-billing-finance.html">Evergent : Facturation et finances</a></li>
+		</ul>
+	</section>
+</article>

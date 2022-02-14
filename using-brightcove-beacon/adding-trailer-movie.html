@@ -1,0 +1,42 @@
+---
+title: Ajout d'une bande-annonce à la description d'un film Beacon : Cette rubrique explique comment ajouter une bande-annonce pour un film.
+parent: Using Brightcove Beacon
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Adding_a_trailer">Ajout d'une remorque</h2>
+    <p>L'ajout d'une bande-annonce pour un film Beacon est simple. Suivez les étapes ci-dessous.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Téléchargez la bande-annonce sur votre compte Video Cloud.</li>
+      <li>
+        Tu fais <strong>ne pas</strong> besoin d'ajouter des champs personnalisés Beacon spéciaux à la vidéo de la bande-annonce. Tout ce dont vous avez besoin est le <strong>identifiant vidéo</strong>:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/add-trailer-movie/get-trailer-video-id.png" alt="Get Video ID">
+          <figcaption class="bcls-caption--image">Obtenir l'identifiant vidéo</figcaption>
+        </figure>
+      </li>
+      <li>
+        Pour la vidéo utilisée pour le film Beacon, <a href="/assets/images/syncing-with-vc/vc-custom-fields">ajouter le champ personnalisé suivant</a>:
+        <table class="bcls-table">
+          <caption class="bcls-caption--table">Champ personnalisé de la bande-annonce</caption>
+          <thead class="bcls-table__head">
+              <tr>
+                  <th>Afficher un nom</th>
+                  <th>Nom interne</th>
+                  <th>Valeur</th>
+              </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+              <tr>
+                  <td translate="no">balise.trailer.id</td>
+                  <td translate="no">beacon_trailer_id</td>
+                  <td translate="no">(Identifiant vidéo pour la bande-annonce)</td>
+              </tr>
+          </tbody>
+      </table>
+      </li>
+    </ol>
+  </section>
+</article>

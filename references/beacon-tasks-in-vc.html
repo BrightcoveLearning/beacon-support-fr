@@ -1,0 +1,104 @@
+---
+title: Description de « Tâches de balise Brightcove exécutées dans Video Cloud » : "Dans cette rubrique, vous apprendrez les tâches qui doivent/devraient être effectuées dans Video Cloud Studio en tant que client Brightcove Beacon."
+
+parent: "references"
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+    <summary>{{ page.description }}</summary>
+
+    <section class="bcls-section">
+        <h2 id="Task_summary">Résumé de la tâche</h2>
+        <p>Voici la liste des tâches que vous, en tant que client Brightcove Beacon, devez/devez effectuer dans Video Cloud Studio :</p>
+        <ul>
+            <li><a href="#Add_video_assets">Ajouter des éléments vidéo</a></li>
+            <li><a href="#Create_custom_fields">Créer des champs personnalisés</a></li>
+            <li><a href="#Add_images">Ajouter des images associées à l'élément vidéo</a></li>
+            <li><a href="#Add_rights_management_information">Ajouter des informations sur la gestion des droits</a></li>
+            <li><a href="#Add_episode_data">Ajouter des données d'épisode pour une série/saison à un élément vidéo</a></li>
+            <li><a href="#Create_video_playlists">Créer des listes de lecture vidéo</a></li>
+            <li><a href="#Create_Brightcove_Live_events">Créer des événements Brightcove Live</a></li>
+            <li><a href="#Create_an_SSAI_ad_configuration">Créer une configuration d'annonce SSAI</a></li>
+        </ul>
+        <p>Chaque tâche sera expliquée plus loin dans ce document avec un lien vers la documentation où des instructions sont fournies sur la façon d'effectuer cette tâche particulière.</p>
+        <p>Ce document n'est PAS un manuel "comment faire" pour chaque tâche, mais chaque section vous liera au document approprié qui contient les étapes sur la façon d'accomplir la tâche.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Add_video_assets">Ajouter des éléments vidéo</h2>
+        <p>Video Cloud est l'outil utilisé pour télécharger vos vidéos que vous utilisez dans Brightcove Beacon. Tout au long de ce document, vous verrez que Video Cloud Studio est un outil couramment utilisé lorsque vous travaillez avec votre application Brightcove Beacon.</p>
+        <p>Les ressources suivantes vous permettront d'intégrer vos vidéos dans Video Cloud :</p>
+        <ul>
+            <li><a href="https://studio.support.brightcove.com/basics/video-cloud-basics-uploading-videos.html">Notions de base sur le cloud vidéo : Téléchargement de vidéos</a> - Une vidéo de 1 minute 30 secondes et quatre étapes pour un démarrage rapide du téléchargement de contenu dans Video Cloud.</li>
+            <li><a href="https://studio.support.brightcove.com/media/uploading-videos-using-upload-module.html">Téléchargement de vidéos à l'aide du module de téléchargement</a> - Le document complet sur le téléchargement de vidéos avec Video Cloud.</li>
+            <li><a href="https://studio.support.brightcove.com/media/index.html">Gestion des vidéos</a> - La page de destination qui englobe l'ensemble du flux de travail de gestion vidéo, y compris les documents sur le téléchargement de vidéos, les listes de lecture, l'organisation de vidéos avec des dossiers, etc.</li>
+        </ul>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Create_custom_fields">Créer des champs personnalisés</h2>
+        <p>Video Cloud vous permet d'utiliser des champs personnalisés pour ajouter des métadonnées à vos vidéos. Une fois que vous avez des vidéos, les champs personnalisés jouent un rôle important dans la préparation de ces vidéos à utiliser dans Brightcove Beacon. Les champs personnalisés que vous ajoutez aux vidéos Video Cloud qui fonctionnent avec Brightcove Beacon se répartissent en trois catégories. Ces catégories, et une brève explication de chacune, sont :</p>
+        <ul>
+            <li><strong>Général</strong> - Des informations sur le contenu de la vidéo, notamment :
+                <ul>
+                    <li>Genre</li>
+                    <li>Description courte et longue</li>
+                    <li>Année de production</li>
+                    <li>Jeter</li>
+                    <li>Écrivain</li>
+                    <li>etc.</li>
+                </ul>
+            </li>
+            <li><strong>Gestion des droits</strong> - Prend en charge la monétisation et les restrictions d'accès. Par exemple, le type de publicité et les dates de disponibilité des vidéos.</li>
+            <li><strong>Données sur les épisodes</strong> - Si la vidéo est un épisode d'une série, vous définissez la série, la saison et le numéro d'épisode.</li>
+        </ul>
+        <p>Les <a href="/syncing-with-video-cloud/vc-custom-fields.html">Création de champs personnalisés Video Cloud</a> document est uniquement dédié à vous aider à créer les champs personnalisés requis.</p>
+        <p>Des valeurs sont attribuées à ces champs personnalisés dans Video Cloud Studio.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Add_images">Ajouter des images</h2>
+        <p>Les images que vous ajoutez dans Video Cloud apparaissent dans vos applications Brightcove Beacon. Par exemple, les images d'affiche de Video Cloud apparaissent comme indiqué ici dans vos applications :</p>
+        <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/references/bcb-tasks-performed-in-vc/thumbnail-images.png" alt="">
+        </figure>
+        <p>Les <a href="/references/image-requirements.html">Images et leurs spécifications</a> document spécifie les exigences relatives aux images et également comment télécharger les images dans Video Cloud Studio.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Add_rights_management_information">Ajouter des informations sur la gestion des droits</h2>
+        <p>Comme mentionné précédemment, les champs personnalisés sont utilisés pour ajouter des informations de gestion des droits qui contrôlent la monétisation et les restrictions d'accès. Par exemple, les champs</p>
+        <ul>
+            <li>beacon.rights.<em>indice</em>.date de début</li>
+            <li>beacon.rights.<em>indice</em>.date de fin</li>
+        </ul>
+        <p>définir quand un actif vidéo particulier est accessible.</p>
+        <p>De plus, les documents suivants montrent comment mettre en œuvre la monétisation via la publicité et les abonnements :</p>
+        <ul>
+            <li><a href="/using-brightcove-beacon/vod-ssai.html">Mise en œuvre de la VOD SSAI</a> ; voir le <a href="/using-brightcove-beacon/vod-ssai.html#Setting_custom_field_values">Définition des valeurs de champ personnalisées</a> section du document pour fournir des valeurs aux champs personnalisés appropriés.</li>
+            <li><a href="/using-brightcove-beacon/using-subscription-package.html">Utiliser un forfait d'abonnement</a></li>
+        </ul>
+        <p>Les champs personnalisés de gestion des droits reçoivent des valeurs dans Video Cloud Studio. </p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Add_episode_data">Ajouter des données d'épisode</h2>
+        <p>Si une vidéo particulière est un épisode d'une série, des champs personnalisés sont utilisés pour attribuer des données d'épisode qui associent la vidéo à la série, la saison et le numéro d'épisode corrects. Cet exemple montre les champs personnalisés utilisés et des valeurs spécifiques pour chaque champ.</p>
+        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/syncing-with-vc/vc-custom-fields/episode-example.png" alt=""> </figure>
+        <p>Les <a href="/using-brightcove-beacon/series-seasons-episodes.html#Ingesting_episodes">Ingérer des épisodes</a> partie de la <strong>Création de séries/saisons/épisodes</strong> document fournit des instructions spécifiques.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Create_video_playlists">Créer des listes de lecture vidéo</h2>
+        <p>Les listes de lecture sont fortement utilisées dans Brightcove Beacon pour décider du contenu vidéo à afficher sur une page d'application. Vous créez des listes de lecture dans Video Cloud Studio.</p>
+        <p>Les ressources suivantes vous permettent d'intégrer vos vidéos dans Video Cloud :</p>
+        <ul>
+            <li><a href="https://studio.support.brightcove.com/basics/video-cloud-basics-creating-manual-playlist.html">Notions de base sur le cloud vidéo : Création d'une liste de lecture manuelle</a></li>
+            <li><a href="https://studio.support.brightcove.com/basics/video-cloud-basics-creating-smart-playlist.html">Notions de base sur le cloud vidéo : Créer une liste de lecture intelligente</a></li>
+            <li><a href="https://studio.support.brightcove.com/media/creating-and-managing-playlists.html">Créer et gérer des listes de lecture</a></li>
+        </ul>
+        <aside class="bcls-aside bcls-aside--warning">Les listes de lecture créées dans Video Cloud Studio peuvent contenir UNIQUEMENT des vidéos. Si vous souhaitez créer des listes de lecture contenant des séries, des événements en direct, etc., celles-ci doivent être créées dans Brightcove Beacon.</aside>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Create_Brightcove_Live_events">Créer des événements Brightcove Live</h2>
+        <p>Si vous souhaitez lire des événements de diffusion en direct dans vos applications Brightcove Beacon, une partie du processus doit être effectuée dans Video Cloud Studio. Les <a href="/using-brightcove-beacon/streaming-live-event.html">Diffuser un événement en direct</a> document vous guide tout au long du processus.</p>
+    </section>
+    <section class="bcls-section">
+        <h2 id="Create_an_SSAI_ad_configuration">Créer une configuration d'annonce SSAI</h2>
+        <p>L'insertion d'annonces côté serveur (SSAI) peut être utilisée dans Brightcove Beacon. Pour implémenter cela, vous devez créer une configuration publicitaire dans Video Cloud Studio. Les <a href="/using-brightcove-beacon/vod-ssai.html">Mise en œuvre de la VOD SSAI</a> document explique comment créer cette configuration publicitaire, ainsi que le processus de bout en bout de configuration VOD SSAI pour Brightcove Beacon.</p>
+    </section>
+</article>

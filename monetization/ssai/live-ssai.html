@@ -1,0 +1,277 @@
+---
+title: Description de « Mise en œuvre de Live SSAI » : Dans cette rubrique, vous apprendrez à gérer et à créer des configurations d'annonces en direct côté serveur dans Brightcove Beacon.
+parent: SSAI 
+grandparent: Monetization
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="overview">Aperçu</h2>
+
+    <p>
+      Brightcove Beacon prend en charge l'insertion d'annonces côté serveur (SSAI) dans les événements en direct afin que les annonces côté serveur puissent être demandées et affichées pendant une diffusion en direct. Remarque : si vous utilisez la redondance avec SSAI, vous devez insérer des annonces dans tous les emplois du groupe en même temps. 
+    </p>
+    <p>Une vue de haut niveau du processus est :</p>
+    <ol>
+      <li>Créez une configuration d'annonce dans Studio.</li>
+      <li>Créez une ardoise de remplissage pour votre événement en direct.</li>
+      <li>Créez un événement en direct avec SSAI activé.</li>
+      <li>Publiez l'événement en direct sur Brightcove Beacon.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information"> Ce document est complémentaire au <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Diffuser un événement en direct</a> documentation pour vous guider dans l'ajout de SSAI à vos événements en direct. Pour des informations détaillées sur la façon de créer un événement, veuillez consulter la section sur <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#create" target="_blank">Création d'un événement en direct dans Brightcove Beacon</a> . </aside>
+
+    <p>SSAI fournit ces fonctionnalités principales lors d'événements en direct :</p>
+    <ul>
+      <li>
+        Étant donné que les publicités sont cousues dans le flux vidéo en direct côté serveur, elles ne sont pas affectées par les bloqueurs de publicités.
+      </li>
+      <li>
+        Les publicités sont insérées aux points de repère envoyés depuis votre encodeur ou vous pouvez créer un point de repère instantané à l'aide de la salle de contrôle du module Live.
+      </li>
+      <li>
+        Vous pouvez configurer <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html#fill_slate" target="_blank">remplir les ardoises</a> pour combler tout temps publicitaire inutilisé.
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configuring-ssai">Configuration des paramètres d'annonce côté serveur</h2>
+    <p>
+      Ici, vous allez créer une configuration d'annonce SSAI à utiliser comme ensemble d'annonces qui seront affichées dans votre événement Brightcove Beacon Live.
+    </p>
+    <ol class="bcls-tasklist">
+      <li>Connectez-vous à Studio.</li>
+      <li>
+        Dans l'en-tête de navigation, cliquez sur <strong>ADMINISTRER</strong> et sélectionnez <strong>Paramètres d'annonce côté serveur</strong>. Une liste de toutes les configurations d'annonces sera affichée.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/1-studio-ssai-settings.png" />
+        </figure>
+      </li>
+      <li>
+        Pour créer une nouvelle configuration d'annonce, cliquez sur le bouton <strong>Créer une configuration d'annonce</strong> bouton.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/2-create-ad-configuration.png" />
+        </figure>
+        <aside class="bcls-aside bcls-aside--information"> Les configurations d'annonces en direct côté serveur peuvent également être gérées à l'aide de l'API Live. Pour plus d'informations, voir <a href="https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Create_an_ad_configuration" target="_blank">API en direct de Brightcove : Insertion d'annonces côté serveur (SSAI)</a> . </aside>
+      </li>
+      <li>
+        Dans la liste déroulante, sélectionnez <strong>Habitent</strong> en tant que genre.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/3-ad-config-live.png" />
+        </figure>
+      </li>
+      <li>
+        Vérifiez que vous voyez le <strong>Paramètres d'annonce côté serveur</strong> former.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/4-ad-config-form.png" />
+        </figure>
+      </li>
+      <li>Donnez à votre configuration d'annonce un <strong>Nom</strong>.</li>
+      <li>
+        Sélectionnez le <strong>Réponse du serveur publicitaire</strong>:
+        <ul>
+          <li><strong>VASTE</strong></li>
+          <li><strong>DFP (Règles relatives aux annonces)</strong></li>
+          <li><strong>XML intelligent</strong></li>
+        </ul>
+        <aside class="bcls-aside bcls-aside--information"> Veuillez vérifier auprès de votre responsable des opérations publicitaires la bonne valeur à sélectionner. </aside>
+      </li>
+      <li>Entrer le <strong>Balise publicitaire (URL du serveur)</strong>.</li>
+      <li>Clique le <strong>sauvegarder</strong> bouton.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configuring-slate">Configuration d'une ardoise de remplissage</h2>
+    <p>
+      Les ardoises de remplissage sont des vidéos qui seront affichées lorsqu'il y a des lacunes dans une pause publicitaire de diffusion en direct qui ne peuvent pas être comblées par une publicité diffusée de manière dynamique. Si l'annonce demandée est plus courte que le temps de pause publicitaire, l'ardoise de remplissage sera affichée afin que les téléspectateurs ne voient pas un lecteur vide.
+    </p>
+    <aside class="bcls-aside bcls-aside--information"> Vous devez configurer au moins une ardoise de remplissage avant de demander une annonce côté serveur. </aside>
+    <p>Pour ajouter une ardoise de remplissage, procédez comme suit :</p>
+    <ol class="bcls-tasklist">
+      <li>
+        Clique le <strong>ADMINISTRER</strong> &gt; <strong>Paramètres en direct</strong> lien dans l'en-tête du Studio. <aside class="bcls-aside bcls-aside--information"> Vous devez être administrateur de compte pour accéder au <strong>ADMINISTRER</strong> menu. </aside>
+      </li>
+      <li>
+        Cliquez sur <strong>+ Ajouter une ardoise de remplissage</strong>. Vous devriez voir le formulaire suivant :
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/5-fill-slate.png" />
+        </figure>
+      </li>
+      <li>Entrez un <strong>Nom</strong> pour votre ardoise de remplissage.</li>
+      <li>Entrer le <strong>URL source</strong> pour l'ardoise.</li>
+      <li>Cliquez sur <strong>sauvegarder</strong>. Le processus d'ingestion de l'ardoise va commencer.</li>
+    </ol>
+    <p>Pour supprimer une ardoise de remplissage, cliquez sur le bouton Supprimer (<img alt="" src="/assets/images/using-bcb/live-ssai/node18588-delete-icon.png" />) à côté de l'ardoise de remplissage.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="creating-live-ssai">Création d'un événement en direct prenant en charge SSAI</h2>
+    <p>
+      Pour qu'un événement en direct utilise SSAI (Server-side Ad Insertion), le <strong>Activer l'insertion d'annonces côté serveur (SSAI)</strong> Le paramètre doit être sélectionné lors de la création de l'événement et une liste de remplissage précédemment créée doit être choisie pour la lecture.
+    </p>
+    <p>
+      Suivez ces étapes pour créer un événement prenant en charge les annonces SSAI dans Brightcove Beacon :
+    </p>
+    <ol class="bcls-tasklist">
+      <li>Ouvrez le <strong>Habitent</strong> module dans Studio.</li>
+      <li>Du <strong>Gérer les événements</strong> page, cliquez sur <strong>Créer un évènement</strong>.</li>
+      <li>
+        Entrez les détails de votre événement. Pour des informations complètes sur la création d'un événement en direct à l'aide du module Live, veuillez consulter <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html" target="_blank"> Création et gestion d'événements en direct à l'aide du module Live</a>.
+      </li>
+      <li>Cliquez sur <strong>OPTIONS AVANCÉES</strong> pour étendre les options avancées.</li>
+      <li>Vérifier <strong>Activer l'insertion d'annonces côté serveur (SSAI)</strong>. Cela permettra l'insertion d'annonces côté serveur.</li>
+      <li>
+        Sélectionner un <strong>Remplir l'ardoise</strong>. L'ardoise de remplissage s'affiche lorsqu'il y a des lacunes dans une coupure publicitaire de diffusion en direct qui ne peuvent pas être comblées par une annonce diffusée de manière dynamique.
+      </li>
+      <li>
+        Quand le <strong>Annonce audio</strong> est coché, les niveaux audio des annonces seront normalisés en fonction de l'ajustement défini. Cela peut être utilisé comme un moyen de s'assurer que les annonces ne sont pas beaucoup plus fortes que le contenu. Brightcove recommande de sélectionner cette option.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="450" height="700" src="/assets/images/using-bcb/live-ssai/6-ssai-check.png" />
+        </figure>
+      </li>
+      <li>Cliquez sur <strong>Créer un évènement</strong></li>
+      <li>
+        Les <strong>Salle de contrôle</strong> La page s'ouvrira avec des détails sur l'événement en direct, y compris le <strong>Point de terminaison de streaming (URL RTMP)</strong> et <strong>Nom du flux</strong>. Ces valeurs seront utilisées par l'encodeur.
+      </li>
+      <li>
+        Configurez votre encodeur et démarrez le flux en direct. <aside class="bcls-aside bcls-aside--information"> Pour commencer à diffuser sur la plate-forme Live, vous aurez besoin d'un encodeur. Pour plus d'informations sur l'utilisation d'un encodeur, veuillez lire la documentation suivante :
+          <p>
+            <a href="https://live.support.brightcove.com/get-started/step-step-using-live-module-telestream-wirecast.html" target="_blank">Pas à pas: Utilisation du Live Module avec Telestream Wirecast</a>
+          </p>
+          <p>
+            <a href="https://live.support.brightcove.com/get-started/step-step-using-live-module-open-broadcaster-software-obs.html" target="_blank">Pas à pas: Utilisation du Live Module avec le logiciel Open Broadcaster (OBS)</a>
+          </p>
+        </aside>
+      </li>
+      <li>
+        Par défaut, le <strong>Salle de contrôle</strong> Le lecteur de prévisualisation affiche le flux sans publicité. Les annonces ne seront pas affichées dans le <strong>Salle de contrôle</strong> sauf si une configuration d'annonce en direct est sélectionnée. Utilisez le menu déroulant ci-dessous jusqu'au lecteur pour sélectionner une configuration publicitaire.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/7-select-ad-config.png" />
+        </figure>
+      </li>
+      <li>
+        (Facultatif) Cliquez sur le bouton plus (<img alt="" src="/assets/images/using-bcb/live-ssai/node18753-plus-icon.png" />) pour sélectionner une configuration publicitaire supplémentaire. Cela ajoutera un autre lecteur de prévisualisation sur le <strong>Salle de contrôle</strong> page.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/8-two-preview-players.png" />
+        </figure>
+        <p>
+          Cliquez sur le bouton de volume sous le lecteur de prévisualisation pour contrôler le flux audio du lecteur actif.
+        </p>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="creating-live-ssai">Demander une annonce</h2>
+    <p>
+      Suivez ces étapes pour demander une annonce dans le Live <strong>Salle de contrôle</strong>:
+    </p>
+    <ol class="bcls-tasklist">
+      <li>
+        Cliquez sur <strong>Aller à l'annonce</strong> et dans la liste déroulante, choisissez la durée de la pause publicitaire souhaitée.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="350" height="500" src="/assets/images/using-bcb/live-ssai/9-gotoad.png" />
+        </figure>
+      </li>
+      <li>
+        Cliquez sur <strong>Insérer</strong> pour insérer une coupure publicitaire dans le flux en direct. Si l'annonce ne remplit pas toute la durée de la pause publicitaire, l'ardoise de remplissage (sélectionnée lors de la création de l'événement) sera affichée.
+      </li>
+    </ol>
+    <p>
+      Les annonces seront vues dans le <strong>Salle de contrôle</strong> lecteur de prévisualisation et dans les lecteurs publiés à l'aide du module Live. Cet exemple montre 2 annonces affichées dans le <strong>Salle de contrôle</strong>.
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/10-adsplayer.png" />
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="requesting-ssai">Publication d'un événement en direct dans Brightcove Beacon</h2>
+    <p>
+      Pour publier votre événement en direct avec des annonces côté serveur dans Brightcove Beacon, procédez comme suit :
+    </p>
+    <ol class="bcls-tasklist">
+      <li>En direct <strong>Salle de contrôle</strong> Cliquez sur <strong>Publier et intégrer</strong> dans la navigation de gauche.</li>
+      <li>
+        Sélectionner <strong>Configuration du lecteur</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/11-controlroom.png" />
+        </figure>
+      </li>
+      <li>Dans le <strong>Options de lecteur en direct</strong> sélectionnez un <strong>Lecteur disponible</strong>.</li>
+      <li>
+        Sélectionnez votre <strong>Configuration de l'annonce</strong> précédemment créé dans le <strong>Paramètres d'annonce côté serveur</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/12-select-player.png" />
+        </figure>
+      </li>
+      <li>
+        Après avoir sélectionné votre <strong>Lecteur disponible</strong> et <strong>Configuration de l'annonce</strong> , une nouvelle URL de lecteur sera générée. Copiez la partie sélectionnée de l'URL comme indiqué dans l'image, à partir du mot <strong>habitent</strong>. Exemple: <strong>live.xxxxxxx</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/13-player-url.png" />
+        </figure>
+      </li>
+      <li>Accédez à la plate-forme Brightcove Beacon.</li>
+      <li>
+        Dans Brightcove Beacon, dans le menu supérieur, cliquez sur le bouton <strong>Publicité</strong> languette.
+      </li>
+      <li>
+        Clique le <strong>Ajouter une nouvelle configuration</strong> bouton.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/14-newadconfig.png" />
+        </figure>
+      </li>
+      <li>
+        Vérifiez que vous voyez le <strong>Nouvelle publicité</strong> former.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/15-newadconfig-settings.png" />
+        </figure>
+      </li>
+      <li>Donnez à votre nouvelle configuration publicitaire un <strong>Nom</strong>.</li>
+      <li>
+        Dans le <strong>ID de configuration d'annonce en direct :</strong> , collez le <strong>ID de l'URL du lecteur</strong> vous venez de copier depuis la Live Platform, par exemple : <strong>live.xxxx</strong>.
+      </li>
+      <li>Du <strong>Fournisseur</strong> sélection de menu <strong>Brightcove SSAI</strong>.</li>
+      <li>Cliquez dans le <strong>Créer une nouvelle publicité</strong> bouton.</li>
+      <li>
+        Cliquez sur le menu supérieur <strong>Événements</strong> et créez ou sélectionnez votre événement Live. Pour plus d'informations sur la création d'un événement en direct Brightcove Beacon, veuillez consulter le <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html" target="_blank">Diffuser un événement en direct</a> document. <aside class="bcls-aside bcls-aside--information"> Pour que l'événement en direct soit diffusé avec succès dans Brightcove Beacon, le <strong>ID de tâche</strong> et <strong>Identifiant de la vidéo en streaming</strong> doit correspondre aux identifiants de l'événement Live actuel. </aside>
+      </li>
+      <li>
+        Dans votre événement en direct Brightcove Beacon, cliquez sur le bouton <strong>Droits et planification</strong> languette.
+      </li>
+      <li>
+        Dans le <strong>Type de droits</strong> menu déroulant, sélectionnez <strong>Publicité - AVOD</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/16-ad-avod.png" />
+        </figure>
+      </li>
+      <li>
+        Dans le <strong>Configuration de la publicité</strong> menu du bas, sélectionnez votre configuration publicitaire précédemment créée.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/17-ad-configuration.png" />
+        </figure>
+      </li>
+      <li>Clique le <strong>Mettre à jour l'événement</strong> bouton.</li>
+      <li>
+        Clique sur le <strong>Outils</strong> (clé) en haut à droite de l'écran. Videz ensuite le cache.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/live-ssai/18-clear-cache.png" />
+        </figure>
+      </li>
+      <li>
+        Ouvrez votre application Brightcove Beacon et sélectionnez votre événement (les noms des événements et les images sur l'image sont à titre d'exemple uniquement).
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" width="400" height="700" src="/assets/images/using-bcb/live-ssai/19-app-event.png" />
+        </figure>
+      </li>
+      <li>
+        Dans votre application Brightcove Beacon, cliquez sur le <strong>Jouer</strong> bouton. Vous devriez maintenant pouvoir voir le streaming de votre événement en direct, avec des publicités insérées par SSAI à partir de Video Cloud.
+      </li>
+    </ol>
+    <p>
+      Une fois votre événement terminé, vous pouvez l'enregistrer en tout ou en partie sous forme de clip qui devient une ressource vidéo dans Video Cloud ou un flux lisible qui peut être affiché dans Brightcove Beacon. Les annonces de l'événement en direct ne seront pas enregistrées, mais les points de repère à partir desquels les annonces ont été transmises seront enregistrés afin que vous puissiez ajouter de nouvelles annonces dans une VOD ultérieure de votre événement en direct enregistré.
+    </p>
+    <p>
+      Pour plus d'informations sur la création d'un clip, veuillez consulter le <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#Clip" target="_blank">Création d'un clip à partir de votre événement en direct</a> partie de la <em>Diffuser un événement en direct</em> document.
+    </p>
+  </section>
+</article>

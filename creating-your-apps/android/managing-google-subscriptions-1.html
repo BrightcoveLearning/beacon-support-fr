@@ -1,0 +1,105 @@
+---
+title: Description de la « Gestion des abonnements Google, partie 1 » : "Dans cette rubrique, vous apprendrez à créer un compte de service et à le configurer. Il s'agit de la première partie du processus plus large d'établissement de la communication entre vos applications Brightcove Beacon et le Google Store."
+
+parent: "android"
+layout: staging
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="section-name">introduction</h2>
+    <p>Ce document vous explique comment utiliser la console Google Play pour créer un compte de service, puis effectuer quelques tâches de configuration.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Create_a_service_account">Créer un compte de service</h2>
+    <p>Effectuez les étapes suivantes pour créer un compte de service :</p>
+    <ol class="bcls-tasklist">
+      <li>Naviguez jusqu'au <a href="https://play.google.com/console">Console de jeu Google</a>.</li>
+      <li>Dans le coin supérieur droit, cliquez sur <strong>Accédez à la console de jeu</strong>.</li>
+      <li>Dans la navigation de gauche, sélectionnez <strong>Paramètres → Compte développeur → Accès API</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/gpc-first-nav-steps.png" alt="Settings > Developer Account > API access" width="268">
+        </figure>
+      </li>
+      <li>Cliquez sur <strong>Créer un nouveau compte de service</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/create-service-account.png" alt="create service account">
+        </figure>
+      </li>
+      <li>Dans la boîte de dialogue qui apparaît, cliquez sur <strong>Plateforme Google Cloud</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/create-new-service-account-dialog.png" alt="new service account dialog">
+        </figure>
+      </li>
+      <li>Depuis la page vers laquelle vous êtes redirigé, cliquez sur <strong>+ CRÉER UN COMPTE DE SERVICE</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/iam-admin-redirect.png" alt="service accounts">
+        </figure>
+      </li>
+      <li>Dans la boîte de dialogue qui s'ouvre, pour le <strong>Nom du compte de service</strong> Entrer <samp>Abonnements Android</samp> puis clique <strong>CRÉER</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/create-service-account-1.png" alt="enter service account name">
+        </figure>
+      </li>
+      <li>À l'étape 2, dans la liste déroulante, choisissez le <strong>Rôle</strong> être <samp>Propriétaire</samp> puis clique <strong>CONTINUEZ</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/create-service-account-2.png" alt="choose role">
+        </figure>
+      </li>
+      <li>À l'étape 3, cliquez sur <strong>TERMINÉ</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/create-service-account-3.png" alt="click done">
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Configure_the_service_account">Configurer le compte de service</h2>
+    <p>Effectuez les étapes suivantes pour configurer votre compte de service :</p>
+    <ol class="bcls-tasklist">
+      <li>Pour le compte de service qui vient d'être créé, sous <strong>Actions</strong> cliquez sur les trois points verticaux. Puis clique <strong>Gérer les clés</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/manage-keys.png" alt="manage keys">
+        </figure>
+      </li>
+      <li>Dans le <strong>Clés</strong> informations, sélectionnez <strong>AJOUTER UNE CLÉ → Créer une nouvelle clé</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/create-new-key.png" alt="create new key">
+        </figure>
+      </li>
+      <li>À partir des informations sur la clé privée, laissez le <strong>Type de clé</strong> être <samp>JSON</samp>, puis clique <strong>CRÉER</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/create-json-private-key.png" alt="json private key">
+        </figure>
+      </li>
+      <li>Assurez-vous que ce message s'affiche :
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/private-key-saved.png" alt="private key saved verification">
+        </figure>
+      </li>
+      <li>Vous devez envoyer le fichier de clé privée par e-mail à votre responsable d'intégration.</li>
+      <li>Vous pouvez fermer l'onglet que vous avez ouvert à l'étape 5 et cliquer sur <strong>Terminé</strong> à partir de la boîte de dialogue qui a lancé votre processus de création de compte de service.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/click-done.png" alt="click done">
+        </figure>
+      </li>
+      <li>Dans le <strong>Comptes de service</strong> rubrique, cliquez sur <strong>Accorder l'accès</strong> à côté de votre compte de service nouvellement créé.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/click-grant-access.png" alt="grant access">
+        </figure>
+      </li>
+      <li>Du <strong>Inviter un utilisateur</strong> page, dans le <strong>Autorisations de compte</strong> rubrique, cliquez sur le <strong>Administrateur (toutes les autorisations)</strong> case à cocher.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/creating-your-apps/android/gpc-server-server-subscriptions/admin-permissions.png" alt="grant admin permissions">
+        </figure>
+      </li>
+      <li>En bas à droite de la page, cliquez sur <span class="button-blue">Inviter un utilisateur</span>.</li>
+      <li>Dans la boîte de dialogue qui s'ouvre, cliquez sur <span class="button-blue">Envoyer une invitation</span>.</li>
+    </ol>
+  </section>
+
+</article>

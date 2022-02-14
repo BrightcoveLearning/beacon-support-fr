@@ -1,0 +1,141 @@
+---
+title: 'Aperçu: Monétisation avancée des balises' la
+description: Cette rubrique fournit une vue d'ensemble de l'intégration entre Brightcove Beacon et Evergent.
+parent: Using Brightcove Beacon
+layout: staging
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">introduction</h2>
+		<p>Evergent est un système de gestion des paiements et des abonnés qui a été intégré à Beacon pour fournir ces fonctionnalités. Evergent fournit une gestion robuste des abonnés et un accès à de nombreuses passerelles de paiement populaires dans le monde, y compris celles couramment utilisées en Amérique latine, au Moyen-Orient, en Afrique et dans la région Asie-Pacifique.</p>
+  </section>
+	<section class="bcls-section">
+		<h2 id="glossary_of_terms">Glossaire des termes</h2>
+		<dl>
+			<dt>Unité d'affaires</dt>
+			<dd>Une Business Unit (BU) est une entité du système Evergent qui définit un pays ou une région où vous souhaitez vendre votre contenu. Vous aurez besoin d'unités commerciales distinctes si vous souhaitez des devises ou des perceptions fiscales différentes par pays/région. Dans le système d'Evergent, chaque Business Unit se verra attribuer une devise ; cette devise est ce qui sera présenté à leurs utilisateurs lors de leur paiement.</dd>
+			<dt>Passerelle de paiement</dt>
+			<dd>Un service qui permet à un commerçant d'accepter des paiements de clients. La passerelle de paiement agit en tant qu'intermédiaire en transférant l'argent des comptes bancaires de vos clients vers votre propre compte bancaire de manière sécurisée et fiable.</dd>
+			<dt>Marchand enregistré</dt>
+			<dd>L'entité juridique qui est autorisée à recevoir des paiements des consommateurs. Vous serez un MOR (Merchant of Record) avec chaque passerelle que vous utilisez.</dd>
+			<dt>Compte marchand</dt>
+			<dd>Un compte bancaire virtuel où sont envoyés les revenus des ventes en ligne. Les revenus résident sur votre compte marchand jusqu'au règlement - le processus de transfert de fonds sur votre compte bancaire. En règle générale, la passerelle de paiement fournit un compte marchand. Les passerelles qui ne fournissent pas de comptes marchands transfèrent des fonds directement sur votre compte bancaire.</dd>
+			<dt>Emballer</dt>
+			<dd>Un package définit comment les utilisateurs peuvent acheter l'accès à votre contenu dans le CMS Beacon ; il définit tous les détails d'un plan de monétisation. Il comprend des informations telles que le prix, la fréquence de facturation, la disponibilité, la disponibilité des magasins d'applications, la devise, la période d'essai, etc.</dd>
+			<dt>Des produits</dt>
+			<dd>Produits dans Evergent définit tous les détails d'un plan de monétisation. Il comprend des informations telles que le prix, la fréquence de facturation, la disponibilité, la disponibilité des magasins d'applications, la devise, la période d'essai, etc.</dd>
+		</dl>
+	</section>
+	<section class="bcls-section">
+		<h2 id="account_setup">Configuration du compte</h2>
+		<h3>Ce qu'il faut:</h3>
+		<h4>balise</h4>
+		<ul>
+			<li>Dans Beacon, vous avez besoin d'un CMS avec Evergent configuré en tant que Store.</li>
+			<li>Tous les pays où vos services seront disponibles.</li>
+			<li>Chaque pays doit avoir une devise définie pour recevoir les paiements d'un téléspectateur. </li>
+		</ul>
+		<h4>Evergent</h4>
+		<ul>
+			<li>Vous avez besoin d'unités commerciales créées dans Evergent qui correspondent aux devises dans lesquelles vous souhaitez recevoir des paiements. </li>
+			<li>Chaque Business Unit aura des passerelles et une facturation de l'App Store (Apple Store, Roku, Amazon, Google Play) configurées. Vous devez avoir une relation et un compte marchand avec chaque passerelle qu'ils souhaitent utiliser.</li>
+		</ul>
+	</section>
+	<section class="bcls-section">
+		<h2 id="package_product_management">Gestion des packages/produits</h2>
+		<p>Vous configurerez et gérerez les plans de monétisation à partir de l'interface utilisateur Beacon et de l'interface utilisateur Evergent. Les plans devront être liés manuellement à l'aide de SKU dans Beacon et Evergent :</p>
+		<ul>
+			<li>Les packages configurés dans Beacon sont la façon dont les informations sont présentées aux téléspectateurs dans l'application. Voir <a href="/using-brightcove-beacon/creating-subscription-package.html">Création d'un forfait d'abonnement</a> pour les détails.</li>
+			<li>Les <strong>Produit</strong> dans Evergent leur permet de traiter les paiements pour le bon plan de monétisation et de valider le reçu avant que le spectateur n'ait accès au contenu. Voir <a href="/monetization/beacon-evergent/evergent-account-management.html">Gestion de compte Evergent</a> pour les détails.</li>
+			<li>
+				Pour la version initiale, Beacon prendra en charge les modèles de monétisation suivants :
+				<ul>
+					<li>MixedVOD - abonnement pour les utilisateurs authentifiés avec des annonces diffusées</li>
+					<li>SVOD - abonnement pour les utilisateurs authentifiés et aucune annonce diffusée</li>
+				</ul>
+			</li>
+			<li>Les prochaines versions incluront TVOD et PPV.</li>
+		</ul>
+	</section>
+	<section class="bcls-section">
+		<h2 id="website_sales">Ventes de sites Web</h2>
+		<p>Une fois les packages et les produits configurés, vous pourrez accepter les paiements sur votre application Web Beacon. Les achats dans l'application Web Beacon sont traités via une passerelle de paiement connectée via la plate-forme Evergent.</p>
+		<h3>Passerelles de paiement et méthodes de paiement</h3>
+		<p>Evergent permet à nos clients de recevoir des paiements via plusieurs passerelles de paiement. La configuration de la passerelle de paiement est au niveau de la Business Unit. Un client peut avoir plusieurs passerelles de paiement configurées pour une Business Unit. Lorsque plusieurs passerelles sont configurées, le spectateur dispose de différentes options de méthode de paiement lors du paiement. Les clients sont tenus d'avoir une relation directe avec la passerelle de paiement.</p>
+	</section>
+	<section class="bcls-section">
+		<h2 id="In_app_purchases">Achats intégrés</h2>
+		<p>Les clients de Beacon pourront également vendre leur contenu via les magasins Apple, Google, Amazon et Roku. Chaque magasin est configuré en option dans le Beacon CMS et dans le système d'Evergent.</p>
+		<ul>
+			<li>Lorsque <a href="/using-brightcove-beacon/creating-subscription-package.html">créer un package SVOD dans Beacon</a> , les clients ont la possibilité de sélectionner les magasins d'applications via lesquels ils souhaitent vendre leur package. Le peut définir la boutique d'applications, la disponibilité, l'emplacement, le prix, la devise et le SKU du produit de la boutique d'applications.</li>
+			<li>De plus, l'App Store (Apple, Google, Amazon, Roku), l'ID de produit de l'App Store et le nom du produit peuvent être configurés sur un produit SVOD.</li>
+		</ul>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Subscriber_viewer_management">Gestion des abonnés/spectateurs</h2>
+		<p>La monétisation avancée de Beacon prend en charge les flux d'enregistrement et d'achat via les deux applications :</p>
+		<ul>
+			<li>Lorsque les téléspectateurs s'inscrivent dans l'application Beacon, une visionneuse fantôme est automatiquement créée dans la base de données des téléspectateurs d'Evergent. </li>
+			<li>Les téléspectateurs sont segmentés dans la base de données des téléspectateurs d'Evergent. Si un client a plus d'une Business Unit, des visualiseurs sont créés dans la Business Unit qui correspond à son emplacement.</li>
+			<li>Les téléspectateurs peuvent être des téléspectateurs non payants ou des téléspectateurs payants dans le système d'Evergent.</li>
+		</ul>
+		<h3>Dépannage des problèmes de visionneuse</h3>
+		<p>Vous devrez utiliser à la fois la gestion des visionneuses de Beacon et la gestion des abonnés d'Evergent pour dépanner vos visionneuses' problèmes, selon le type de problème. Les informations ci-dessous vous aideront à déterminer vers quel système vous devrez vous adresser pour des cas particuliers.</p>
+		<h4>Informations sur la visionneuse contenues dans la gestion des visionneuses de Beacon :</h4>
+		<ul>
+			<li>Nom</li>
+			<li>E-mail</li>
+			<li>Mot de passe</li>
+			<li>Historique d'achat</li>
+			<li>Informations sur le profil</li>
+			<li>Signets et favoris</li>
+			<li>Appareils associés au compte</li>
+		</ul>
+		<h4>Informations sur la visionneuse contenues dans la gestion des abonnés d'Evergent :</h4>
+		<ul>
+			<li>Nom</li>
+			<li>E-mail</li>
+			<li>Identifiants de paiement</li>
+			<li>Historique d'achat</li>
+		</ul>
+		<h4>Tâches à effectuer dans Beacon :</h4>
+		<ul>
+			<li>Mettre à jour le mot de passe de la visionneuse</li>
+			<li>Modifier ou supprimer le profil</li>
+			<li>Supprimer des appareils du compte Beacon</li>
+		</ul>
+		<h4>Tâches à effectuer dans Evergent :</h4>
+		<ul>
+			<li>Émettre un remboursement sur le mode de paiement d'un spectateur enregistré</li>
+			<li>Annuler l'abonnement d'un spectateur</li>
+			<li>Vérifier que le paiement d'un spectateur a réussi</li>
+			<li>Vérifier la date de renouvellement de l'abonnement d'un spectateur</li>
+			<li>Voir tous les paiements d'un spectateur</li>
+		</ul>
+	</section>
+	<section class="bcls-section">
+		<h2 id="coupons_and_voucher_codes">Coupons et codes promotionnels</h2>
+		<p>Dans l'interface utilisateur d'Evergent, vous pourrez générer des coupons et des bons de réduction. Une fois que vous avez généré ces codes, vous pouvez les distribuer à vos téléspectateurs, puis les téléspectateurs peuvent les utiliser pendant le processus de paiement. Les coupons et les bons sont associés à des packages/produits SVOD spécifiques, de sorte que les téléspectateurs ne peuvent les échanger qu'avec le package/produits SVOD correspondants.</p>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Viewer_communication">Communication avec le spectateur</h2>
+		<p>Vous pouvez configurer le contenu et le style des e-mails que vous envoyez aux téléspectateurs dans le système d'Evergent. Vous pouvez également configurer les événements qui déclenchent les e-mails envoyés. Par exemple, lorsqu'un spectateur s'inscrit au service ou lorsqu'il passe d'un abonnement à un autre.</p>
+	</section>
+	<section class="bcls-section">
+		<h2 id="analytics_and_reporting">Analyses et rapports</h2>
+		<h3>Rapports financiers</h3>
+		<p>Les rapports sur les performances commerciales seront disponibles dans le tableau de bord des rapports d'Evergent pour vous aider à comprendre les performances de votre application Beacon par rapport à vos objectifs commerciaux.</p>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Related_topics">Rubriques connexes</h2>
+		<ul>
+			<li><a href="/monetization/beacon-evergent/configuring-beacon-evergent.html">Configurer Beacon avec Evergent</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-finding-accounts.html">Localiser des comptes dans Evergent CRM</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-managing-account-details.html">Evergent : Gérer les détails du compte</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-billing-finance.html">Evergent : Facturation et finances</a></li>
+			<li><a href="/monetization/beacon-evergent/emailer-coupons.html">Evergent : Emailer et coupons</a></li>
+		</ul>
+	</section>
+</article>

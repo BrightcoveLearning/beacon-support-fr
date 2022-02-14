@@ -1,0 +1,173 @@
+---
+title: 'Guide de validation des applications de l'appareil'
+description: 'Dans cette rubrique, vous apprendrez des informations pour valider le comportement ou les applications de votre appareil afin que vous puissiez les soumettre aux magasins correspondants.'
+
+parent: 'General'
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Overview">Aperçu</h2>
+    <p>
+      À un moment donné du développement de vos applications à partir de Brightcove Beacon Experience, vous recevrez des versions de test pour vous assurer que les applications se comportent comme vous le souhaitez. Ce document fournira des informations sur chacun des éléments suivants :
+    </p>
+    <ul>
+      <li><em>Catégories de test</em>: Définir les grands domaines de test.</li>
+      <li>
+        <em>Des astuces</em>: Suggestions et idées à suivre lors de la réalisation des tests.
+      </li>
+      <li>
+        <em>Rapports</em>: La procédure à suivre si vous rencontrez des problèmes lors de vos tests.
+      </li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Before_you_start">Avant de commencer</h2>
+    <p>Assurez-vous que vous êtes configuré pour des tests appropriés. Assurez-vous des points suivants :</p>
+    <ul>
+      <li>Les testeurs disposent de tous les appareils de test nécessaires.</li>
+      <li>Par souci de compatibilité, les appareils utilisés pour les tests ne doivent pas avoir plus de trois ans. Plus loin dans ce document, les versions minimales requises seront spécifiées pour chaque plate-forme.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Testing_categories">Catégories de test</h2>
+    <p>
+      Brightcove recommande de tester les domaines suivants et de répondre aux questions :
+    </p>
+    <ul>
+      <li>
+        Conception et fonctionnalités :
+        <ul>
+          <li>L'expérience correspond-elle aux maquettes convenues ?</li>
+          <li>Toutes les fonctionnalités demandées sont-elles disponibles ?</li>
+        </ul>
+      </li>
+      <li>
+        Mise en page et contenu :
+        <ul>
+          <li>Les pages sont-elles configurées comme prévu ?</li>
+          <li>Le contenu attendu apparaît-il dans chacune des pages ?</li>
+        </ul>
+      </li>
+      <li>
+        Configuration de la monétisation :
+        <ul>
+          <li>Les annonces s'affichent-elles comme prévu ?</li>
+          <li>
+            Les abonnements s'affichent-ils pour les actifs correspondants ?
+          </li>
+          <li>
+            Les utilisateurs peuvent-ils acheter et avoir droit au contenu comme prévu ?
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Supported_platforms_and_versions">Plateformes et versions prises en charge</h2>
+    <p>La liste suivante répertorie les plates-formes et versions prises en charge qui doivent être utilisées pour guider vos tests.</p>
+    <ul>
+      <li>la toile
+        <ul>
+          <li>Chrome – Version actuelle et version actuelle-1</li>
+          <li>Safari - Version actuelle et version actuelle-1</li>
+          <li>Edge - Version actuelle et version actuelle-1</li>
+          <li>Firefox - Version actuelle et version actuelle-1</li>
+        </ul>
+      </li>
+      <li>Apple iOS (mobile/tablette)
+        <ul>
+          <li>Apple iOS 13 et supérieur</li>
+          <li>Pour plus d'informations, consultez le <a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Installation d'une version de test iOS/tvOS</a> document</li>
+        </ul>
+      </li>
+      <li>Apple tvOS
+        <ul>
+          <li>tvOS 12 et supérieur</li>
+          <li>Pour plus d'informations, consultez le <a href="/creating-your-apps/ios-tvos/installing-ios-test-build.html">Installation d'une version de test iOS/tvOS</a> document</li>
+        </ul>
+      </li>
+      <li>Google Android
+        <ul>
+          <li>Android 5 et supérieur</li>
+          <li>Pour plus d'informations, consultez le <a href="/creating-your-apps/android/installing-android-test-build.html">Installation d'une version de test Android</a> document</li>
+        </ul>
+      </li>
+      <li>Google Android TV
+        <ul>
+          <li>Android 5 et supérieur</li>
+          <li>Pour plus d'informations, consultez le <a href="/creating-your-apps/android/installing-android-test-build.html">Installation d'une version de test Android</a> document</li>
+        </ul>
+      </li>
+      <li>Roku
+        <ul>
+          <li>Roku OS 9.1 et supérieur</li>
+          <li>Pour plus d'informations, consultez le <a href="/creating-your-apps/roku/installing-roku-test-build.html">Installation d'une version de test Roku</a> document</li>
+        </ul>
+      </li>
+      <li>Amazon Fire TV
+        <ul>
+          <li>Fire OS 5.0 et supérieur</li>
+          <li>Pour plus d'informations, consultez le <a href="/creating-your-apps/fire-tv/installing-fire-tv-test-build.html">Installation d'une version de test Fire TV</a> document</li>
+        </ul>
+      </li>
+      <li>Téléviseur intelligent Samsung
+        <ul>
+          <li>Tizen 2018, 2019, 2020</li>
+        </ul>
+      </li>
+      <li>Téléviseur intelligent Sony Bravia
+        <ul>
+          <li>Android TV 5.0+ et supérieur</li>
+        </ul>
+      </li>
+      <li>Téléviseur intelligent Toshiba
+        <ul>
+          <li>Android TV 5.0+ et supérieur et/ou Fire OS 5.0 et supérieur</li>
+          <li>Pour plus d'informations, consultez le <a href="/creating-your-apps/android/installing-android-test-build.html">Installation d'une version de test Android</a> document</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Tips">Des astuces</h2>
+    <p>Veuillez tenir compte des conseils suivants lorsque vous effectuez votre validation :</p>
+    <ul>
+      <li>
+        <strong>Premier passage</strong>: Choisissez UNE des plates-formes et passez en revue les différents domaines de test sur cette plate-forme. Commencer avec <em>Conception et fonctionnalités</em>, puis passez à <em>Mise en page et contenu</em> et enfin à <em>Configuration de la monétisation</em> essai.
+      </li>
+      <li>
+        <strong>Des séries de tests supplémentaires</strong>: Lorsque vous avez terminé le premier passage pour chaque zone, passez aux autres plates-formes disponibles. Si un problème s'applique à plusieurs plates-formes, veuillez le noter dans tous les billets signalés précédemment.
+      </li>
+      <li>
+        <strong>Tester les correctifs</strong>: Les correctifs pour les problèmes signalés seront dans l'un de ces trois domaines :
+        <ul>
+          <li>L'expérience Brightcove Beacon (aucune mise à jour d'application nécessaire)</li>
+          <li>Dans la ou les applications</li>
+          <li>Le backend Brightcove Beacon</li>
+        </ul>
+        <p>
+          Si le correctif est dans l'application, une nouvelle version sera fournie avec les détails de ce qui a été corrigé. Pour les autres zones, Brightcove fournirait des détails dans le ticket sur ce qui a été corrigé. Pour accélérer la correction et le nouveau test, il est très important que les tickets fournissent des détails sur le problème et les étapes pour aider au nouveau test.
+        </p>
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Reporting">Rapports</h2>
+    <p>
+      Brightcove vous recommande de signaler les problèmes au fur et à mesure que vous les rencontrez pour que les commentaires continuent d'être transmis à Brightcove et que les problèmes soient résolus et traités pour validation le plus rapidement possible. Veuillez signaler un problème/ticket par problème et fournir les informations suivantes dans chaque problème/ticket :
+    </p>
+    <ul>
+      <li>Plateforme testée</li>
+      <li>La version de l'application dans laquelle le problème a été détecté</li>
+      <li>Étapes à reproduire</li>
+      <li>
+        Veuillez inclure des captures d'écran ou des films d'écran pour aider à accélérer l'identification du problème et fournir une résolution </li>
+    </ul>
+  </section>
+</article>

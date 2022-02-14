@@ -1,0 +1,89 @@
+---
+title: Intégration d'un système de gestion des utilisateurs avec description de balise : Cette rubrique explique comment un système de gestion des utilisateurs (UMS) externe peut être intégré à Brightcove Beacon à l'aide d'OIDC pour l'authentification des utilisateurs et de l'API Webhook Beacon pour informer Beacon des droits des utilisateurs.
+parent: Integration published: false
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">introduction</h2>
+		<p>Vous disposez peut-être déjà d'un système de gestion des utilisateurs - pour une boutique en ligne ou à d'autres fins - que vous souhaiteriez intégrer à Brightcove Beacon plutôt que de le reproduire et de le maintenir manuellement dans Beacon. Ceci est possible en utilisant Open ID Connect (OIDC).</p>
+  </section>
+	<section class="bcls-section">
+		<h2 id="features_of_oidc_external_authentication">Fonctionnalités de l'authentification externe OIDC</h2>
+		<ul>
+			<li>Les bases de données tierces existantes peuvent être utilisées pour authentifier les utilisateurs de Beacon.</li>  
+			<li>Les utilisateurs de Beacon peuvent s'inscrire, s'authentifier et modifier leurs mots de passe via leurs applications Beacon.</li>
+			<li>Prise en charge des applications Beacon dans les achats d'applications.</li> 
+			<li>Les applications existantes et les applications Beacon partagent la même base de données d'authentification.</li>
+			<li>Les nouveaux utilisateurs peuvent s'inscrire dans le système tiers.</li>
+			<li>Flux de travail de jumelage d'appareils (2e appareil, entrez le code à l'écran pour autoriser l'application TV).</li>
+			<li>Connexions sociales - si elles sont prises en charge par le fournisseur OIDC.</li>
+			<li>La limitation de la simultanéité Beacon Stream est prise en charge.</li>
+			<li>Le fournisseur OIDC peut proposer des méthodes d'authentification supplémentaires au-delà du nom d'utilisateur et du mot de passe (multi-facteur, sans mot de passe, appariement d'appareils, appariement de compte Google).</li>
+		</ul>
+	</section>
+	<section class="bcls-section">
+		<h2 id="limitations">Limites de l'authentification externe</h2>
+		<ul>
+			<li>SI le client a besoin de téléviseurs intelligents et de téléviseurs connectés ALORS le système OIDC DOIT prendre en charge le flux de périphérique (<a href="https://tools.ietf.org/html/rfc8628">https://tools.ietf.org/html/rfc8628</a> ) pour authentifier les applications TV.</li>
+			<li>Réinitialisation du mot de passe - NON PRIS EN CHARGE dans la console d'administration Beacon. Les téléspectateurs peuvent mettre à jour PSW via des applications.</li>
+			<li>Aucune gestion des appareils Beacon (par conséquent, limiter et gérer le nombre d'appareils dans un compte n'est PAS pris en charge avec l'authentification tierce)</li>
+		</ul>
+	</section>
+
+<section class="bcls-section">
+	<h2 id="Authorizing_data_retrieval">Autoriser la récupération des données</h2>
+	<p>L'autorisation de récupération de données se fait de deux manières dans Brightcove Beacon, l'authentification et les droits pour les utilisateurs.</p>
+	<h3>Authentification</h3>
+	<p>Brightcove utilise les flux OAuth 2.0 suivants pour l'authentification :</p>
+	<h4>Code d'autorisation avec PKCE : pour <strong>iOS</strong> , <strong>Android</strong> et <strong>la toile</strong></h4>
+	<!-- <figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/references/how-beacon-gets-data/authorization-wth-PKCE.png" alt="">
+	</figure> -->
+	<h4>Flux de périphérique (extension OAuth 2.0) pour <strong>Téléviseurs connectés</strong> et <strong>Téléviseurs intelligents</strong>
+	</h4>
+	<!-- <figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/references/how-beacon-gets-data/device-flow-oauth2.png" alt="">
+	</figure> -->
+	<p>Trois jetons doivent être mis à la disposition de Brightcove Beacon :</p>
+	<ul>
+			<li><strong>Jeton d'accès</strong>: Valide qu'un utilisateur a pu s'authentifier et doit avoir accès à Brightcove Beacon. Le jeton d'accès doit être dans <strong>Format JWT</strong> et inclure <code translate="no">iss</code> et <code translate="no">sous</code> réclamations.</li>
+			<li><strong>Actualiser le jeton</strong>: Permet à l'utilisateur de rester connecté après l'expiration du jeton d'accès en fournissant un mécanisme pour obtenir automatiquement un nouveau jeton d'accès au nom de l'utilisateur (tant que l'utilisateur est autorisé à accéder). Ceci est particulièrement important sur les téléviseurs.</li>
+			<li><strong>Jeton d'identité</strong>: Standardise la manière dont Brightcove obtient des informations sur les utilisateurs.</li>
+	</ul>
+	<p>Les types de subventions suivants doivent être pris en charge :</p>
+	<ul>
+			<li><code translate="no">Code d'autorisation</code></li>
+			<li>refresh_token<code translate="no"></code></li>
+			<li>urn:ietf:params:oauth:grant-type:device_code<code translate="no"></code></li>
+	</ul>
+	<p>Les points de terminaison du fournisseur d'authentification suivants devront être configurés dans Brightcove Beacon. Vous devez les fournir à Brightcove pour une configuration correcte. Si <a href="https://swagger.io/docs/specification/authentication/openid-connect-discovery/">Découverte OpenID Connect</a> est disponible Brightcove peut découvrir ceux-ci :</p>
+	<ul>
+			<li>Jeton d'accès</li>
+			<li>Jeton d'actualisation</li>
+			<li>informations utilisateur</li>
+			<li>Jeton de révocation</li>
+			<li>Autoriser</li>
+			<li>Codes d'appariement</li>
+			<li>JWKS (<a href="https://auth0.com/docs/tokens/json-web-tokens/json-web-key-sets">Ensembles de clés Web JSON</a>)</li>
+			<li>Se déconnecter</li>
+			<li><a href="https://swagger.io/docs/specification/authentication/openid-connect-discovery/">Découverte OpenID Connect</a> (/.well-known/openid-configuration). Ceci est utilisé pour la configuration du système.</li>
+			<li>Facultatif (mais recommandé) : Demande personnalisée <code translate="no">aud</code> (audience) par application cliente. Ceci est utilisé pour une validation supplémentaire.</li>
+	</ul>
+	<p>Pour chaque application, Brightcove devra obtenir de vous les <code translate="no">identité du client</code> à configurer dans les applications, recommandé un par plate-forme. Brightcove fournira également le <code translate="no">redirect_uri(s)</code> à utiliser pour les applications Web et mobiles (le cas échéant).</p>
+
+	<h3>Droits</h3>
+	<p>Pour informer Brightcove Beacon des droits des utilisateurs, Brightcove Beacon fournit l'API suivante :</p>
+	<pre class="line-numbers"><code class="language-html">https://beacon.brightcove.com/<span class="bcls-input">{instance}</span>/webhook/balise</code></pre>
+	<p>La clé API est fournie par Brightcove.</p>
+	<p>La charge utile des données échangées via l'API est au format JSON et se présente comme suit :</p>
+	<pre class="line-numbers"><code class="language-json">[ { "package_name": "string", // Commerce package for SVOD or SKU for TVOD purchases - required "external_user_id": "string", // User identifier (username or email depending on configuration of users)- required "transaction_id": "string", // Unique transaction id for purchase - required for subscriptions (this will be used in renewal) "start_date": "string", // Start date for entitlements "end_date": "string", // End date for entitlements (applicable if a rent or a subscription) "trial_end_date": "string", // End date for a trial if applicable "effective_cancelation_date": "string", // Date by when cancellation is effective (for example, end of current subscription period) "notification_type": "new", // One of: new, renew, cancellation, buy or rent - required “payment_gateway”: “beaconstore” // One of: “beaconstore” } ]</code></pre>
+	<p>Lors de l'utilisation d'un système d'authentification externe, le <code translate="no">id_utilisateur_externe</code> correspond à la valeur du sujet dans le jeton d'accès. Notez également les éléments suivants :</p>
+	<ul>
+			<li>La clé API devra être envoyée dans le <code translate="no">ENTÊTE</code> dans le <code translate="no">jeton d'autorisation</code> clé.</li>
+			<li>Il est possible d'envoyer plusieurs enregistrements en même temps.</li>
+			<li>S'il y a une erreur dans l'un des éléments de la charge utile JSON, la totalité de la charge utile est rejetée.</li>
+	</ul>
+</section>
+</article>

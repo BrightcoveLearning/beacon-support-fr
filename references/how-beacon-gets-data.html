@@ -1,0 +1,41 @@
+---
+title: Description de « Comment Brightcove Beacon obtient les données » : "Dans cette rubrique, vous apprendrez comment Brightcove Beacon obtient les différents types de données utilisées dans la création de ses applications. Des informations couvrant les détails de l'authentification sont également incluses."
+
+parent: "references"
+layout: "staging"
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+    <summary>{{ page.description }}</summary>
+
+    <section class="bcls-section">
+        <h2 id="Introduction">introduction</h2>
+        <p>La première partie de ce document décrit comment Brightcove Beacon obtient des données communes, telles que des vidéos, des listes de lecture et des événements en direct. La dernière section explique en détail comment Open ID Connect (OIDC) et les droits sont utilisés pour autoriser Brightcove Beacon à obtenir des données.</p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Ingestion_and_custom_fields">Ingestion vidéo et champs personnalisés</h2>
+        <p>Les ressources vidéo doivent d'abord être ingérées dans Video Cloud avant que Brightcove Beacon puisse les utiliser. Selon la façon dont les vidéos seront utilisées, par exemple dans une série ou nécessitant de la publicité, Video Cloud <strong>Les champs personnalisés</strong> peut être utilisé pour associer la vidéo à ces exigences particulières. Les <a href="/syncing-with-video-cloud/vc-custom-fields.html">Création de champs personnalisés Video Cloud</a> document explique en détail comment créer des champs personnalisés requis et comment attribuer des valeurs à ces champs.</p>
+        <p>Une fois les vidéos dans Video Cloud, Brightcove Beacon peut extraire les informations associées aux vidéos telles que les métadonnées, les images et l'emplacement du catalogue Video Cloud. Les vidéos restent en fait dans Video Cloud et seront diffusées par l'infrastructure de diffusion de lecture de Video Cloud. Dans l'interface utilisateur de Brightcove Beacon, vous pouvez ingérer manuellement les vidéos Video Cloud' informations ou attendre un processus d'arrière-plan pour le faire.</p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Playlists">Listes de lecture</h2>
+        <p>En plus des ressources vidéo créées dans Video Cloud, il est également recommandé de créer vos listes de lecture vidéo dans Video Cloud. Vous pouvez créer deux types de listes de lecture dans Video Cloud, <strong>Manuel</strong> et <strong>Intelligent</strong>. Pour plus de détails sur la mise en œuvre des listes de lecture dans Video Cloud, consultez le <a href="https://studio.support.brightcove.com/media/creating-and-managing-playlists.html">Créer et gérer des listes de lecture</a> document.</p>
+        <p>Si vous souhaitez créer une liste de lecture contenant des ressources autres que des vidéos, telles que des séries ou des événements en direct, ces listes de lecture doivent être créées dans Brightcove Beacon.</p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Channels_and_live_events">Chaînes et événements en direct</h2>
+        <p>Pour les chaînes et les événements en direct, les tâches en direct doivent être créées dans le cloud vidéo, puis configurées manuellement dans Brightcove Beacon. Pour plus de détails voir le <a href="/using-brightcove-beacon/streaming-live-event.html">Diffuser un événement en direct</a> et <a href="/using-brightcove-beacon/creating-a-channel.html">Création d'une chaîne</a> documents.</p>
+    </section>
+
+    <section class="bcls-section">
+        <h2 id="Series, seasons and episodes">Séries, saisons et épisodes</h2>
+        <p>Pour les données épisodiques, vous devez utiliser à la fois Brightcove Beacon et Video Cloud. Vous devez d'abord créer la série et les saisons correspondantes dans Brightcove Beacon. L'épisode vidéo réel est ingéré dans Video Cloud, puis des champs personnalisés sont utilisés pour attribuer la vidéo à la bonne série/saison.</p>
+        <p>Pour plus de détails, consultez le <a href="/using-brightcove-beacon/series-seasons-episodes.html">Création de séries/saisons/épisodes</a> document.</p>
+    </section>
+
+
+
+</article>

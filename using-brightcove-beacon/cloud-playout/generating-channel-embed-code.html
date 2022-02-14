@@ -1,0 +1,44 @@
+---
+title: Génération de la description du code d'intégration de la chaîne : Dans cette rubrique, vous apprendrez comment obtenir le code d'intégration pour lire une chaîne Cloud Playout dans Brightcove Player. Le code d'intégration peut être placé dans n'importe quelle page Web.
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="publish">Générer le code d'intégration pour une chaîne Cloud Playout</h2>
+    <p>Pour générer le code d'intégration d'une chaîne Cloud Playout, vous utiliserez le module Live. Pour plus de détails sur l'utilisation du module Live, voir <a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">Création et gestion d'événements en direct à l'aide du module Live</a>.</p>
+    <p>Deux types de code d'intégration sont disponibles :</p>
+    <ul>
+      <li><strong>Standard</strong> - code d'intégration iframe. Recommandé pour la plupart des cas. Ce type place le lecteur dans une balise &lt;iframe&gt;.</li>
+      <li><strong>Avancée</strong> - Code d'intégration dans la page. Permet au lecteur d'exister directement dans la page HTML, pas dans un iframe. Cela offre aux développeurs les avantages de la facilité d'accès au lecteur et aux propriétés et événements associés.</li>
+    </ul>
+    <p>Vous avez également la possibilité d'obtenir l'URL du lecteur publié. Ceci est utile pour afficher l'événement dans un navigateur.</p>
+    <p>Pour générer le code d'intégration d'un événement en direct, procédez comme suit :</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>Ouvrez le module Live.</li>
+      <li>Localisez l'événement en direct auquel la chaîne diffusera. En règle générale, l'événement se déroulera dans le <strong>Etre prêt</strong> onglet et avoir un nom de <strong>Canaliser</strong> à moins que vous n'ayez sélectionné un événement spécifique à diffuser lors de la création de la chaîne.</li>
+      <li>Cliquez sur le nom de l'événement pour ouvrir le <strong>Salle de contrôle</strong> page.</li>
+      <li>Cliquez sur <strong>Publier et intégrer &gt; Configuration du lecteur</strong> dans la navigation de gauche. <aside class="bcls-aside bcls-aside--information">Noter: Si le canal est configuré pour activer les publicités côté serveur (SSAI), Brightcove Player version 6.18.3 et supérieure <strong>doit</strong> être utilisé. Seuls les joueurs de la version 6.18.3 et supérieure apparaîtront dans la liste déroulante.</aside>
+      </li>
+      <li>Clique le <strong>URL du lecteur</strong> pour prévisualiser l'événement dans un navigateur ou copier le code d'intégration approprié à utiliser.
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/cloud-playout/playout-embed-code.png" /></figure>
+      </li>
+    </ol>
+    <p>Si le programme a été créé avec <strong>Insertion d'annonces</strong> option définie sur <strong>Au</strong> , les options de publication incluront un <strong>Sélectionnez la configuration de l'annonce</strong> liste déroulante où la configuration publicitaire à utiliser peut être sélectionnée.</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="report switcher" src="/assets/images/cloud-playout/playout-embed-code-ads.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">Rubriques connexes</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">Aperçu: Lecture en nuage</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">Création d'un canal de diffusion dans le cloud</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">Utilisation des actions de canal</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">Monétisation de la diffusion dans le cloud</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">Affichage de la sortie du canal et de l'analyse</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">Aperçu: API EPG</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">Référence de l'API EPG</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">Référence de l'API de canal</a></li>
+    </ul>
+  </section>
+</article>

@@ -1,0 +1,241 @@
+---
+title: Création d'un canal balise
+description: 'Dans cette rubrique, vous apprendrez à créer une chaîne à l'aide de l'onglet Chaînes de Brightcove Beacon.'
+parent: Managing Channels
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <aside class="bcls-aside bcls-aside--information">REMARQUE: Dans cette rubrique, toutes les étapes sont effectuées dans Beacon Classic.</aside>
+
+  <section class="bcls-section">
+    <h2 id="overview">La description</h2>
+    <p>Les chaînes sont créées pour diffuser des événements en direct 24h / 24 et 7j / 7 comme le ferait une chaîne de télévision ordinaire. Le contenu de la chaîne peut être généré via un ensemble de VOD qui seront diffusés aussi longtemps que la chaîne sera disponible ou en transmettant directement un événement en direct. Pour plus d'informations sur la création d'événements en direct, veuillez visiter le <a href="/live/streaming-live-event.html#Live" target="_blank">Documentation en direct de Brightcove Beacon</a>.</p>
+    <p>En plus du canal Beacon classique, vous pouvez désormais utiliser un <a href="/cloud-playout/cloud-playout-overview.html">Chaîne de diffusion en nuage</a> pour fournir le contenu de votre chaîne. Le principal avantage des canaux Cloud Playout est que Brightcove génère l'EPG - vous n'avez pas besoin d'un service tiers pour cela.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="basic-data">Section Données de base</h2>
+    <p>Pour créer une chaîne dans Brightcove Beacon, procédez comme suit :</p>
+    <ol class="bcls-tasklist">
+      <li>Connectez-vous à Beacon Classic.</li>
+      <li>Dans la navigation supérieure, sélectionnez <strong>Canaux</strong>.</li>
+      <li>Clique le <strong>Ajouter une nouvelle chaîne</strong> bouton.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/1-add-new-channel.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>Dans le <strong>Donnee de base</strong> onglet, définissez un <strong>Nom</strong> pour votre chaîne.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/2-basic-data.png" alt="" />
+        </figure>
+      </li>
+      <li>
+        Si vous utilisez une chaîne Cloud Playout comme source pour votre chaîne Beacon, saisissez l'identifiant de la chaîne Cloud Playout : <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/enter-cloud-playout-channel-id.png" alt="Enter Cloud Playout Channel ID">
+          <figcaption class="bcls-caption--image">Saisissez l'identifiant de la chaîne Cloud Playout</figcaption>
+        </figure>
+        <p>Pour trouver l'identifiant de la chaîne Cloud Playout, consultez <a href="/cloud-playout/cloud-playout-stream-vod.html#Get_information_for_the_Beacon_Channel">Obtenir des informations pour le canal Beacon</a>.</p>
+      </li>
+      <li>Dans le <strong>Évaluation du contenu</strong> menu déroulant, sélectionnez la classification du contenu de votre chaîne en fonction du système de classification du contenu du pays où votre chaîne sera diffusée. Dans l'exemple d'image, c'est pour les États-Unis <strong>TV-Y</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/2.2-basic-data-options.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>Dans le <strong>Détails des genres</strong> rubrique, cliquez sur le <strong>Genres</strong> menu déroulant pour sélectionner un genre pour votre chaîne. (Exemple: horreur, drame, etc.)</li>
+      <li>Si vous ne trouvez pas le genre correct pour votre chaîne, vous pouvez en créer d'autres en cliquant sur le bouton <strong>Créer un genre</strong> bouton.</li>
+      <aside class="bcls-aside bcls-aside--information">Les <strong>Sous-genres</strong> menu déroulant, n'est pas fonctionnel pour le moment.</aside>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="textual-data">Données textuelles</h2>
+    <p>Les <strong>Données textuelles</strong> La section vous permet d'ajouter du texte affichable pour votre chaîne.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Sélectionnez le <strong>Données textuelles</strong> languette.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/3-textual-data.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>Dans le <strong>Titre</strong> champ, définissez un titre pour votre chaîne.</li>
+      <li>Dans le <strong>La description</strong> champ, définissez une description pour votre chaîne.</li>
+      <li>Dans le <strong>Synopsis</strong> champ, définissez un synopsis pour votre chaîne.
+      </li>
+      <aside class="bcls-aside bcls-aside--information">Vous pouvez ajouter un <strong>Données textuelles</strong> section pour chaque langue différente que vous utiliserez dans votre chaîne. </aside>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="non-textual-data">Données non textuelles</h2>
+    <p>Les <strong>Données non textuelles</strong> La section vous permet d'ajouter des images Portrait et Paysage pour votre chaîne. Vous fournirez des images portrait et paysage. Assurez-vous que les images répondent à ces exigences :
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>Image</th>
+          <th>Conditions</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>Affiche de portrait</td>
+          <td>
+            Image de l'affiche (2:3)
+            <table>
+              <tr>
+                <td>Le minimum</td>
+                <td>Largeur: 1000px</td>
+                <td>Hauteur: 563px</td>
+              </tr>
+              <tr>
+                <td>Maximum</td>
+                <td>Largeur: 4000px</td>
+                <td>Hauteur: 2250px</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>Affiche de paysage</td>
+          <td>
+            Image paysage (16:9) :
+            <table>
+              <tr>
+                <td>Le minimum</td>
+                <td>Largeur: 1000px</td>
+                <td>Hauteur: 563px</td>
+              </tr>
+              <tr>
+                <td>Maximum</td>
+                <td>Largeur: 4000px</td>
+                <td>Hauteur: 2250px</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>Sélectionnez le <strong>Données non textuelles</strong> languette.</li>
+      <li>Ajouter un <strong>Affiche de portrait</strong> image pour votre chaîne en faisant glisser et en déposant l'image dans la section boîte.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/4-non-textual-data.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>Ajouter un <strong>Affiche de paysage</strong> image pour votre chaîne en faisant glisser et en déposant l'image dans la section boîte.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Vous pouvez ajouter un ensemble d'images Portrait et Paysage différent pour chaque langue différente que vous utiliserez dans votre chaîne en sélectionnant simplement l'onglet de langue souhaité.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="tags">Mots clés</h2>
+    <p>Les <strong>Mots clés</strong> l'onglet n'est pas fonctionnel pour le moment.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Metadata">Métadonnées</h2>
+    <p>Les <strong>Métadonnées</strong> l'onglet n'est pas fonctionnel pour le moment.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Streams">Ruisseaux</h2>
+    <p>Les <strong>Flux</strong> La section vous permet de définir les options et les autorisations pour l'URL de lecture.</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Sélectionnez le <strong>Ruisseaux</strong> languette.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/5-streams.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>Sélectionnez votre <strong>Fournisseur</strong>. Vous n'aurez probablement qu'un seul fournisseur, qui fait référence à votre compte Brightcove Video Cloud.</li>
+      <li>Clique le <strong>Ajouter un nouveau flux</strong> bouton.</li>
+      <li>Dans le <strong>Identifiant de la vidéo en streaming</strong> champ, collez l'ID vidéo de votre événement en direct Video Cloud. Si vous utilisez un canal Cloud Playout comme source pour votre canal Beacon, consultez <a href="/cloud-playout/cloud-playout-stream-vod.html#Get_information_for_the_Beacon_Channel">Obtenez des informations pour le canal Beacon.</a> </li>
+      <li>Dans le <strong>Appareils à publier</strong> section, ajoutez les appareils sur lesquels vous souhaitez publier. Sélectionnez le <strong>Sélectionner / Désélectionner tous les appareils</strong> pour voir la liste des appareils disponibles. </li>
+      <li>Dans le <strong>Type de flux</strong> sélectionner <strong>Habitent</strong>.</li>
+      <li>Notez que le <strong>Type de DRM</strong> et <strong>Format de flux</strong> les valeurs n'ont pas besoin d'être modifiées.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Rights_and_Scheduling">Droits et planification</h2>
+    <p>
+      Les <strong>Droits et planification</strong> La section est l'endroit où vous définissez le statut de publication et la disponibilité.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>Sélectionnez le <strong>Droits et planification</strong> languette.</p>
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/6-rights-schedualing.png" alt="" width="" height="" />
+        </figure>
+      </li>
+      <li>
+        Assurez-vous que le <strong>Statut</strong> est réglé sur <strong>Publié</strong> pour votre chaîne.
+      </li>
+      <li>
+        Pour le <strong>Détails de disponibilité</strong> , utilisez ce qui suit comme guide pour compléter les informations :
+        <table class="bcls-table">
+          <thead class="bcls-table__head">
+            <tr>
+              <th>Champ</th>
+              <th>Obligatoire</th>
+              <th>Remarques</th>
+            </tr>
+          </thead>
+          <tbody class="bcls-table__body">
+            <tr>
+              <td>Type de droits</td>
+              <td>Oui</td>
+              <td>Sélectionnez en fonction de votre modèle de monétisation : <ul>
+                  <li><strong>Libérer</strong></li>
+                  <li><strong>Publicité - AVOD </strong>: Pour les chaînes monétisées avec de la publicité.</li>
+                  <li><strong>Abonnement - SVOD</strong>: Pour les chaînes monétisées avec un abonnement.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Heure de début</td>
+              <td>Oui</td>
+              <td>Planifiez une heure de début pour votre chaîne.</td>
+            </tr>
+            <tr>
+              <td>Heure de fin</td>
+              <td>Oui</td>
+              <td>Planifiez une heure de fin pour votre chaîne.</td>
+            </tr>
+            <tr>
+              <td>Flux max.</td>
+              <td>N / A</td>
+              <td>Non fonctionnel pour le moment.</td>
+            </tr>
+            <tr>
+              <td>Appareils à publier</td>
+              <td>Oui</td>
+              <td>
+                Ajoutez les appareils sur lesquels vous souhaitez publier. Sélectionnez le <strong>Sélectionner/désélectionner tous les appareils</strong> pour voir la liste des appareils disponibles.
+              </td>
+            </tr>
+            <tr>
+              <td>Emplacements autorisés</td>
+              <td>Oui</td>
+              <td>
+                Sélectionnez les emplacements où vous souhaitez diffuser votre contenu.
+              </td>
+            </tr>
+            <tr>
+              <td>Emplacements refusés</td>
+              <td>Non</td>
+              <td>
+                Sélectionnez les emplacements où vous ne souhaitez PAS diffuser votre contenu.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <aside class="bcls-aside bcls-aside--tip"> Pour ajouter ou modifier des emplacements géographiques, accédez à <strong>Paramètres</strong> puis <strong>Emplacements</strong> . </aside>
+      </li>
+      <li>
+        Assurez-vous de cliquer sur le <strong>Créer une nouvelle chaîne</strong> bouton pour enregistrer votre travail.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" src="/assets/images/channels/creating-channels/7-create-button.png" alt="" width="" height="" />
+        </figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Add-Channel-to-EPG">Ajout de votre chaîne à un guide électronique des programmes (EPG)</h2>
+    <p>Une fois votre chaîne créée, la dernière étape consistera à l'ajouter au programme EPG de Brightcove Beacon. Pour savoir comment procéder, veuillez consulter le <a href="https://beacon.support.brightcove.com/using-brightcove-beacon/electronic-program-guides.html" target="_blank">Création d'un guide électronique des programmes (EPG)</a> Documentation. </p>
+    <aside class="bcls-aside bcls-aside--information">Notez que si vous utilisez une chaîne Cloud Playout comme source pour votre chaîne Beacon, Brightcove créera l'EPG pour vous, et vous n'aurez aucune autre action à effectuer.</aside>
+  </section>
+</article>

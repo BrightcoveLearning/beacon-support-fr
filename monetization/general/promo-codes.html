@@ -1,0 +1,53 @@
+---
+title: Description de « Créer des coupons promotionnels » : Dans cette rubrique, vous apprendrez à créer des coupons/bons Brightcove Beacon à l'usage de vos clients lors du paiement.
+parent: Monetization
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }} <aside class="bcls-aside bcls-aside--information">Noter: Alternativement, vous pouvez créer les coupons directement dans Stripe.</aside>
+  </summary>
+
+  <section class="bcls-section">
+    <h2 id="overview"> Étapes pour créer un nouveau coupon</h2>
+    <p>Pour créer de nouveaux coupons/bons dans Brightcove Beacon, procédez comme suit : </p>
+
+    <ol class="bcls-tasklist-restart">
+      <li>Dans l'interface utilisateur de Brightcove Beacon, cliquez sur le bouton <strong>Commerce</strong> languette.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/1-beacon-ui.png" />
+        </figure>
+      </li>
+      <li>Dans le menu de gauche, sélectionnez <strong>Coupons par bande</strong>.</li>
+      <li>Clique le <strong>Ajouter un nouveau bon</strong> bouton.</li>
+      <li>Dans le <strong>Identifiant</strong> champ, saisissez le code que les utilisateurs utiliseront.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/2-id-name.png" />
+        </figure>
+      </li>
+      <li>Pour le <strong>Nom</strong> champ, utilisez un nom convivial qui peut être affiché dans les factures.</li>
+      <li>Pour le <strong>Durée</strong> champ, entrez la durée du coupon en mois. </li>
+      <li>Dans le <strong>Type de remise</strong> vous avez la possibilité de spécifier la remise en devise ou en pourcentage. Par exemple, si la remise est de 3 mois gratuits, définissez la durée sur <strong>Répéter</strong> avec 3 mois et <strong>Type de remise</strong> comme 100%.</li>
+      <li>Dans le <strong>Limites</strong> section, vous pouvez limiter le nombre d'échanges ou la date d'utilisation du coupon. Par exemple, supposons que le coupon ne peut être utilisé que jusqu'à la fin du mois d'août, ou que seules les 100 premières personnes recevront le coupon.
+        <figure class="bcls-figure">
+          <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/3-lmitations-packages.png" />
+        </figure>
+      </li>
+      <li>Dans le <strong>Forfaits/Abonnement Associés</strong> section, spécifiez les abonnements qui peuvent être utilisés avec le coupon. Si vous ne sélectionnez pas d'abonnement, il s'appliquera à tous les abonnements aux packages.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">Notez ce qui suit
+      <ul>
+        <li>Une fois le Coupon/Voucher créé, tout utilisateur enregistré peut l'appliquer lors de l'achat d'un abonnement.
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/4-enter-voucher.png" />
+          </figure>
+        </li>
+        <li>Si un coupon non valide est saisi, le message suivant s'affiche :
+          <figure class="bcls-figure">
+            <img class="bcls-image--no-border" alt="" src="/assets/images/using-bcb/promo-codes/5-error.png" />
+          </figure>
+        </li>
+      </ul>
+    </aside>
+  </section>
+
+</article>

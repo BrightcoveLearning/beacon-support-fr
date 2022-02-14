@@ -1,0 +1,244 @@
+---
+title: 'Evergent : Facturation et finances' la
+description: Cette rubrique fournit un guide de gestion des enregistrements de facturation et des finances pour vos utilisateurs.
+parent: Beacon Advanced Monetization
+layout: staging
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="introduction">introduction</h2>
+		<p>Pour accéder à l'historique des finances et de la facturation d'un utilisateur, vous devrez vous connecter au système Evergent CRM et localiser le compte sur lequel vous souhaitez travailler. Voir <a href="/monetization/beacon-evergent/evergent-finding-accounts.html">Localiser des comptes dans Evergent CRM</a> pour les détails.</p>
+		<p>Les <strong>Facturation et finances</strong> L'onglet des informations de compte d'utilisateur est utilisé pour afficher l'historique de facturation et financier de vos téléspectateurs. Vous pouvez émettre des paiements, des ajustements et des remboursements à vos clients à partir de l'onglet Facturation et finances.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/billing-finance-tab.png" alt="Billing and Finance Tab">
+			<figcaption class="bcls-caption--image">Onglet Facturation et finances</figcaption>
+		</figure>
+		<p>Les fonctionnalités qui peuvent être provisionnées sont les suivantes :</p>
+		<ul>
+			<li>Solde courant</li>
+			<li>Factures</li>
+			<li>Paiements</li>
+			<li>Ajustements</li>
+			<li>Remboursements</li>
+		</ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Running_Balance">Solde courant</h2>
+		<p>Le solde courant est un solde du grand livre dynamique qui affiche toutes les transactions de crédit et de débit de ce compte d'utilisateur en fonction de la plage sélectionnée avec le dernier enregistrement.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/running-balance.png" alt="Running Balance">
+			<figcaption class="bcls-caption--image">Solde courant</figcaption>
+		</figure>
+		<!-- <h3>Make a payment</h3>
+		<p>This module is used to make payment for a user account by an existing payment method and a new  payment method. To make a payment, do the following:</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/make-payment.png" alt="Make a Payment">
+			<figcaption class="bcls-caption--image">Make a Payment</figcaption>
+		</figure>
+		<ol class="bcls-tasklist-restart">
+			<li>Click the <strong>Running Balance</strong> hyperlink under the Billing and Finance tab.</li>
+			<li>Click the <strong>Make a Payment</strong> button.</li>
+			<li>Select the payment mode that you want to make a payment.</li>
+			<li>Enter the card number in the <strong>Card Number</strong> field.</li>
+			<li>Enter the type of card in the <strong>Card Type</strong> field.</li>
+			<li>Enter the name of a cardholder in the <strong>Name on Card</strong> field.</li>
+			<li>Enter the card expiry date in the <strong>Expiry (MM/YYYY)</strong> field.</li>
+			<li>Enter the security code in the <strong>Security Code</strong> field.</li>
+			<li>Enter the required amount in the <strong>Amount</strong> field.</li>
+			<li>Click the <strong>Make Payment</strong> button. The payment line-item will be added to Payment History.</li>
+		</ol> -->
+
+		<h3>Ajustements</h3>
+		<p>Ce module est une transaction qui fournit les corrections de paiement d'une écriture de paiement en compte client. Pour effectuer les ajustements de paiement sur le compte, procédez comme suit :</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/make-adjustment.png" alt="Make an Adjustment">
+			<figcaption class="bcls-caption--image">Faire un ajustement</figcaption>
+		</figure>
+		<ol class="bcls-tasklist-restart">
+			<li>Clique le <strong>Solde courant</strong> lien hypertexte sous l'onglet Facturation et finances.</li>
+			<li>Clique le <strong>Faire un ajustement</strong> bouton.</li>
+			<li>Sélectionnez le <strong>Type de réglage</strong> dans la liste déroulante.</li>
+			<li>Entrez le montant que vous souhaitez ajuster dans le <strong>Montant</strong> champ.</li>
+			<li>Sélectionnez le motif des ajustements de paiement dans le <strong>Sélectionnez la raison</strong> la liste déroulante.</li>
+			<li>Sélectionnez la facture dans le <strong>Facture remise</strong> liste déroulante pour laquelle vous souhaitez effectuer les ajustements.</li>
+			<li>Sélectionnez le <strong>Date de début de la panne</strong> et <strong>Date de fin de panne</strong> du calendrier.</li>
+			<li>Tapez les commentaires dans le <strong>Commenter</strong> champ.</li>
+			<li>Clique le <strong>Terminé</strong> bouton. Les ajustements sont ajoutés dans la section Liste des ajustements.</li>
+		</ol>
+		<h3>Écrire</h3>
+		<p>Le bouton Radiation dans le solde courant des comptes respectifs ne s'affichera que lorsque le solde dû pour le compte est positif, c'est-à-dire que le client doit payer le montant. En cliquant sur le bouton Radiation, si le client a payé le montant et <strong>ajouter un montant d'ajustement négatif pour rendre le solde dû à zéro</strong>.</p>
+  </section>
+	<section class="bcls-section">
+		<h2 id="Invoices">Factures</h2>
+		<p>La section factures affiche toutes les factures générales créées pour un compte. Il montre en détail pour chaque facture.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/invoices.png" alt="Invoices">
+			<figcaption class="bcls-caption--image">Factures</figcaption>
+		</figure>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Payments">Paiements</h2>
+		<p>Affichez l'historique des paiements du client existant, qui fournit un enregistrement des détails de la carte de crédit, l'ID du produit commandé, la date de réception du paiement, le montant, le statut, ainsi que la possibilité de rembourser le paiement au client.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/payments.png" alt="Payments">
+			<figcaption class="bcls-caption--image">Paiements</figcaption>
+		</figure>
+		<h3>Remboursement du montant </h3>
+		<p>Pour rembourser le montant, procédez comme suit :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Clique le <strong>Paiements</strong> lien hypertexte sous le <strong>Facturation et finances</strong> languette.</li>
+			<li>Sur l'écran Historique des paiements, cliquez sur le bouton <strong>Remboursement</strong> bouton dans le <strong>Actions</strong> l'en-tête de colonne que vous souhaitez rembourser pour le compte.</li>
+			<li>
+				Une boîte de dialogue, <strong>"Es-tu sûr?"</strong> apparaît comme indiqué ci-dessous.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/confirm-refund.png" alt="Confirm Refund">
+					<figcaption class="bcls-caption--image">Confirmer le remboursement</figcaption>
+				</figure>
+			</li>
+			<li>Sélectionnez un motif de remboursement dans le <strong>Sélectionnez la raison</strong> la liste déroulante.</li>
+			<li>Tapez les commentaires pour le remboursement du paiement dans le champ <strong>commentaires</strong> boîte.</li>
+			<li>Clique le <strong>Oui, remboursement</strong> bouton pour effectuer un remboursement, ou bien cliquez sur <strong>Retourner</strong> pour rejeter les modifications.</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Adjustments">Ajustements</h2>
+		<p>Ce module est une transaction qui fournit les corrections de paiement d'une écriture de paiement en compte client.</p>
+		<h3>Faire un ajustement de paiement</h3>
+		<p>Pour effectuer des ajustements de paiement, procédez comme suit :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Clique le <strong>Ajustements</strong> lien hypertexte sous le <strong>Facturation et finances</strong> languette.</li>
+			<li>Clique le <strong>Faire un ajustement</strong> bouton pour ajuster les paiements.</li>
+			<li>
+				Les <strong>Ajustements</strong> l'écran s'affiche comme indiqué ci-dessous.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/adjustments.png" alt="Adjustments">
+					<figcaption class="bcls-caption--image">Ajustements</figcaption>
+				</figure>
+			</li>
+			<li>Sélectionnez le <strong>Type de réglage</strong> dans la liste déroulante disponible.</li>
+			<li>Entrez le montant que vous souhaitez ajuster dans le <strong>Montant</strong> champ.</li>
+			<li>Sélectionner <strong>Raison</strong> et <strong>Donné sur facture</strong> dans la liste déroulante disponible.</li>
+			<li>Sélectionner <strong>Date de début de la panne</strong> et <strong>Date de fin de panne</strong>.</li>
+			<li>Entrez les commentaires pour les ajustements dans le <strong>Commenter</strong> boîte.</li>
+			<li>Cliquez sur <strong>Terminé</strong> pour fournir le réglage ou bien cliquez <strong>Retourner</strong>.</li>
+	</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Refunds">Remboursements</h2>
+		<p>Les remboursements sont calculés chaque fois qu'un service est supprimé ou déconnecté. A compter de la date de déconnexion/suppression, il remboursera le montant quelle que soit la durée de facturation.</p>
+		<h3>Ajouter des remboursements</h3>
+		<p>Pour ajouter des remboursements au compte utilisateur, procédez comme suit :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Clique le <strong>Remboursements</strong> lien hypertexte sous le <strong>Facturation et finances</strong> languette.</li>
+			<li>
+				Cliquez sur l'icône Remboursements Ajouter (<i data-feather="plus"></i>) pour effectuer un remboursement à un client.
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/beacon-evergent/refunds-screen.png" alt="Refunds">
+					<figcaption class="bcls-caption--image">Remboursements</figcaption>
+				</figure>
+			</li>
+			<li>
+				Voici les types de remboursement dans la liste Type de transaction :
+				<ul>
+					<li>Facturé</li>
+					<li>Non facturé</li>
+					<li>Tous les paiements</li>
+					<li>Rétrofacturation</li>
+				</ul>
+			</li>
+		</ol>
+		<h4>Remboursement sur les transactions facturées</h4>
+		<p>En sélectionnant le <strong>Type de transaction facturée</strong> du <strong>Type d'opération</strong> zone de liste déroulante :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Sélectionnez l'une des factures de la <strong>Sélectionnez la facture</strong> la liste déroulante.</li>
+			<li>Sélectionnez l'un des produits de la <strong>Sélectionnez le produit commandé</strong> zone de liste déroulante.</li>
+			<li>Entrez le prix à facturer dans le <strong>Prix facturé</strong> champ.</li>
+			<li>Saisissez le montant de la taxe dans le <strong>Taxe facturée</strong> champ.</li>
+			<li>Saisissez le montant du remboursement dans le <strong>Montant à rembourser</strong> champ.</li>
+			<li>Sélectionnez le motif du remboursement du montant dans le <strong>Code de raison</strong> menu déroulant.</li>
+			<li>Tapez les commentaires dans le <strong>commentaires</strong> boîte.</li>
+			<li>Clique le <strong>Ajouter</strong> pour appliquer le remboursement au client, ou bien cliquez sur le <strong>Retourner</strong> bouton pour annuler.</li>
+		</ol>
+		<h4>Remboursement sur les transactions non facturées</h4>
+		<p>En sélectionnant le <strong>Type de transaction non facturée</strong> du <strong>Type d'opération</strong> zone de liste déroulante :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Sélectionnez l'un des <strong>Produits/Forfaits</strong> du <strong>Sélectionnez le produit commandé</strong> zone de liste déroulante.</li>
+			<li>Entrez le prix à facturer dans le <strong>Prix facturé</strong> champ.</li>
+			<li>Saisissez le montant de la taxe dans le <strong>Taxe facturée</strong> champ.</li>
+			<li>Saisissez le montant du remboursement dans le <strong>Montant à rembourser</strong> champ.</li>
+			<li>Par défaut, la case Ajustement est cochée, ce qui indique que l'ajustement du crédit sera ajouté au montant du remboursement qui sera émis, ce qui effacera l'affichage du solde courant à zéro.</li>
+			<li>Sélectionnez le motif du remboursement du montant dans le <strong>Code de raison</strong> menu déroulant.</li>
+			<li>Tapez les commentaires dans le <strong>commentaires</strong> boîte.</li>
+			<li>Clique le <strong>Ajouter</strong> pour appliquer le remboursement au client, ou bien cliquez sur le <strong>Retourner</strong> bouton pour annuler.</li>
+		</ol>
+		<h4>Remboursement sur toutes les transactions de paiement</h4>
+		<p>En sélectionnant le <strong>Tout type de transaction Paiements</strong> du <strong>Type d'opération</strong> zone de liste déroulante :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Saisissez le montant de la taxe dans le <strong>Taxe facturée</strong> champ.</li>
+			<li>Saisissez le montant du remboursement dans le <strong>Montant à rembourser</strong> champ.</li>
+			<li>Entrez l'identifiant dans le <strong>Identifiant de rapprochement</strong> champ.</li>
+			<li>Sélectionnez le motif du remboursement du montant dans le <strong>Code de raison</strong> menu déroulant.</li>
+			<li>Tapez les commentaires dans le <strong>commentaires</strong> boîte.</li>
+			<li>Clique le <strong>Ajouter</strong> pour appliquer le remboursement au client, ou bien cliquez sur le <strong>Retourner</strong> bouton pour annuler.</li>
+		</ol>
+		<h4>Remboursement sur les transactions de rétrofacturation</h4>
+		<p>En sélectionnant le <strong>Type de transaction de rétrofacturation</strong> du <strong>Type d'opération</strong> zone de liste déroulante :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Saisissez le montant de la taxe dans le <strong>Taxe facturée</strong> champ.</li>
+			<li>Saisissez le montant du remboursement dans le <strong>Montant à rembourser</strong> champ.</li>
+			<li>Entrez l'identifiant dans le <strong>Identifiant de rapprochement</strong> champ.</li>
+			<li>Entrez l'identifiant dans le <strong>identifiant de transaction</strong> champ.</li>
+			<li>Sélectionnez le motif du remboursement du montant dans le <strong>Code de raison</strong> menu déroulant.</li>
+			<li>Tapez les commentaires dans le <strong>commentaires</strong> boîte.</li>
+			<li>Clique le <strong>Ajouter</strong> pour appliquer le remboursement au client, ou bien cliquez sur le <strong>Retourner</strong> bouton pour annuler.</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Credits">Crédits</h2>
+		<p>Le crédit est ce que les entreprises fournissent généralement à un client lorsque le montant d'une facture ou d'un achat est contesté ou incorrect. Cela peut être dû à une erreur d'administration ou au fait que le client demande un remboursement total ou partiel.</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/credits-module.png" alt="Credits Module">
+			<figcaption class="bcls-caption--image">Module Crédits</figcaption>
+		</figure>
+		<h3>Ajout de crédits d'élément de campagne</h3>
+		<p>Pour ajouter le crédit d'élément de campagne au compte utilisateur, procédez comme suit :</p>
+		<ol class="bcls-tasklist-restart">
+			<li>Sur le <strong>Crédits</strong> l'écran, cliquez sur le bouton Ajouter (<i data-feather="plus"></i>) pour ajouter un nouveau crédit d'article.</li>
+			<li>Les <strong>Ajouter des crédits</strong> l'écran apparaît.</li>
+			<li>Clique le <strong>Choisissez le type de crédit</strong> liste déroulante et sélectionnez le <strong>Crédit d'élément de ligne</strong>.</li>
+			<li>
+				Sélectionnez un type dans le <strong>Type d'opération</strong> la liste déroulante.
+				<ul>
+					<li>Facturé</li>
+					<li>Non facturé</li>
+					<li>Rétrofacturation</li>
+				</ul>
+			</li>
+		</ol>
+		<p>Seuls les crédits de rétrofacturation sont applicables à Beacon.</p>
+		<h4>Rétrofacturation</h4>
+		<p>Pour un crédit d'élément de ligne de rétrofacturation, procédez comme suit :</p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/beacon-evergent/chargeback-line-item-credit.png" alt="Chargeback Line-Item Credit">
+			<figcaption class="bcls-caption--image">Crédit d'élément de ligne de rétrofacturation</figcaption>
+		</figure>
+		<ol class="bcls-tasklist-restart">
+			<li>Entrez le montant dans le <strong>Montant remboursé</strong> champ.</li>
+			<li>Entrez le montant dans le <strong>Montant à créditer</strong> champ.</li>
+			<li>Sélectionnez une raison dans le <strong>Code de raison</strong> la liste déroulante.</li>
+			<li>Entrez les commentaires dans le <strong>commentaires</strong> boîte.</li>
+			<li>Clique le <strong>Ajouter</strong> pour ajouter le crédit de service, ou bien cliquez sur le <strong>Retourner</strong> bouton pour annuler.</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Related_topics">Rubriques connexes</h2>
+		<ul>
+			<li><a href="/monetization/beacon-evergent/overview-beacon-evergent.html">Aperçu: Monétisation avancée des balises</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-finding-accounts.html">Localiser des comptes dans Evergent CRM</a></li>
+			<li><a href="/monetization/beacon-evergent/evergent-managing-account-details.html">Evergent : Gérer les détails du compte</a></li>
+			<li><a href="/monetization/beacon-evergent/emailer-coupons.html">Evergent : Emailer et coupons</a></li>
+		</ul>
+	</section>
+</article>

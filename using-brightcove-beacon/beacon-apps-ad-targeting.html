@@ -1,0 +1,283 @@
+---
+title: Description du ciblage publicitaire Beacon Apps : Le ciblage publicitaire des applications Beacon permet aux clients Beacon d'envoyer des informations importantes au niveau de l'appareil et spécifiques à l'utilisateur à partir des applications Beacon du client à leur serveur publicitaire ou fournisseur de publicité.
+parent: Using Brightcove Beacon
+layout: staging
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="introduction">introduction</h2>
+    <p>Les informations côté client sont transmises des applications à SSAI, puis SSAI inclut ces données dans la balise VAST du client, ce qui permet ensuite aux clients de cibler les annonces en fonction de ces données. L'objectif est d'augmenter la valeur de l'inventaire publicitaire des clients, augmentant ainsi les revenus publicitaires de leur entreprise.</p>
+    <p>Vous pouvez configurer la manière dont ces données sont transmises à leur serveur publicitaire ou à leur fournisseur de publicité.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="key_benefits">Avantages</h2>
+    <h3>Ciblage publicitaire amélioré</h3>
+    <ul>
+      <li><strong>Identifiant de session utilisateur :</strong> nous générons un identifiant de session sur chaque appareil lorsqu'un utilisateur ouvre l'application. Cela vous permet de limiter le nombre d'annonces à cette session, d'exclure les annonces concurrentes d'être diffusées ensemble et d'effectuer une rotation séquentielle des annonces dans cette session. Ces capacités de ciblage sont à la fois nécessaires pour les annonces de vente directe et programmatiques</li>
+      <li><strong>Plus de données pour les annonces programmatiques :</strong> Les applications mobiles et les applications CTV ne prennent pas en charge les cookies, qui constituent la méthode dominante de ciblage publicitaire basé sur l'utilisateur/l'appareil sur le Web. En incluant des paramètres tels que Device ID, vous pouvez transmettre ces informations précieuses aux acheteurs d'annonces programmatiques, qui amélioreront ensuite leurs capacités de ciblage publicitaire, conduisant à de meilleurs CPM.</li>
+    </ul>
+    <h3>Prise en charge de la répartition de l'inventaire publicitaire</h3>
+    <p>Pour les applications qui s'exécutent sur Amazon, Roku et Samsung (aux États-Unis), vous devez effectuer une répartition 70/30 de l'inventaire publicitaire/des revenus avec la plate-forme. Les clients Beacon monétisent 70 % de l'inventaire publicitaire et la plate-forme obtient les 30 % restants de l'inventaire publicitaire. Avec ce ciblage publicitaire amélioré, vous pouvez utiliser un seul tag publicitaire dans toutes leurs applications et transmettre les paramètres de l'appareil à leur serveur publicitaire. À l'intérieur de leur serveur publicitaire, ils implémenteront la logique métier qui divise l'inventaire publicitaire par appareil. Les plates-formes nécessitent également de passer LAT - Limited Ad Targeting - pour Ad Inventory Split, qui est un paramètre que nous envoyons maintenant à votre serveur publicitaire.</p>
+    <h3>Améliorations de la confidentialité des utilisateurs</h3>
+    <ul>
+      <li>LAT "Ciblage publicitaire limité" - permet aux utilisateurs d'applications Beacon de désactiver le ciblage publicitaire en fonction du comportement de l'utilisateur.</li>
+      <li>Les utilisateurs ont la possibilité de réinitialiser l'ID d'appareil unique que nous attribuons à l'appareil à tout moment.</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="targeting_information">Informations de ciblage</h2>
+    <p>Vous pouvez cibler les annonces en fonction des informations du tableau ci-dessous.</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">Informations de ciblage</caption>
+      <thead class="bcls-table__head">
+          <tr>
+              <th>Type d'informations</th>
+              <th>Nom de variable</th>
+              <th>Valeurs</th>
+          </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+          <tr>
+              <td>Plate-forme</td>
+              <td><code translate="no">Plate-forme</code></td>
+              <td><code translate="No">iOS</code>, <code translate="No">Android</code> , <code translate="No">Roku</code> , <code translate="No">AppleTV</code> , <code translate="No">Web</code> , <code translate="No">STV</code></td>
+          </tr>
+          <tr>
+              <td>Version du système d'exploitation</td>
+              <td><code translate="no">système d'exploitation</code></td>
+              <td>version du système d'exploitation de l'appareil (par exemple, <code translate="No">iOS 14</code></td>
+          </tr>
+          <tr>
+              <td>Modèle d'appareil</td>
+              <td><code translate="no">maquette</code></td>
+              <td>modèle d'appareil. Version du navigateur utilisée pour les applications Web</td>
+          </tr>
+          <tr>
+              <td>Fabricant</td>
+              <td><code translate="no">fabrication</code></td>
+              <td>fabricant de l'appareil ; nom du navigateur utilisé pour les applications Web</td>
+          </tr>
+          <tr>
+              <td>Langue</td>
+              <td><code translate="no">langue</code></td>
+              <td>Code de langue défini dans l'application (provenant du CMS)</td>
+          </tr>
+          <tr>
+              <td>Session utilisateur</td>
+              <td>sid<code translate="no"></code></td>
+              <td>Chaque fois que cette application est lancée, nous voulons créer un entier unique qui est stocké en mémoire et non persistant</td>
+          </tr>
+          <tr>
+              <td>Identifiant unique de l'appareil</td>
+              <td>rdid<code translate="no"></code></td>
+              <td>ID d'appareil réinitialisable (TIFA = Samsung, rida = Roku, adid = Android, etc.) - si un ciblage publicitaire limité est défini sur l'application, l'ID doit être entièrement à zéro (impossible d'identifier l'utilisateur/l'appareil). Cet article n'est pas applicable au Web.</td>
+          </tr>
+          <tr>
+              <td>L'utilisateur autorise-t-il le suivi</td>
+              <td>is_lat<code translate="no"></code></td>
+              <td>0 si l'utilisateur n'a pas choisi de limiter le ciblage, 1 s'il limite le ciblage publicitaire. Cet article n'est pas applicable au Web.</td>
+          </tr>
+          <tr>
+              <td>type d'appareil</td>
+              <td><code translate="no">type d'identifiant</code></td>
+              <td>adid = Android, idfa = téléphones Apple (iOS), afai = Amazon, rida : Roku tvOS : Apple TV (tvOS)</td>
+          </tr>
+          <tr>
+              <td>Identifiant de l'application</td>
+              <td>app_id<code translate="no"></code></td>
+              <td>Il doit s'agir du nom de l'ensemble d'applications (<code translate="no">com.brightcove.beacon</code>)</td>
+          </tr>
+      </tbody>
+  </table>
+  <h3>Remarques</h3>
+  <ul>
+    <li>Cette fonctionnalité fonctionne sur toutes les plateformes/appareils iOS, Apple TV, Android, Roku, Fire TV, Web et Smart TV.</li>
+    <li>Le ciblage publicitaire Beacon Apps peut être utilisé avec VOD SSAI et Live SSAI.</li>
+  </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Implementation">Mise en œuvre</h2>
+    <p>Ci-dessous une liste de <strong>macros de valeur</strong> qui seront transmises à l'application, qui remplacera ensuite les valeurs réelles avant d'être envoyées au serveur publicitaire. Elles sont <strong>NE PAS</strong> configurable.</p>
+    <table class="bcls-table">
+      <caption class="bcls-caption--table">Macros de valeur</caption>
+      <thead class="bcls-table__head">
+          <tr>
+              <th>Macro</th>
+              <th>La description</th>
+          </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+          <tr>
+              <td translate="no" style="font-weight:bold">PLATE-FORME</td>
+              <td>La plate-forme de balise appropriée : iOS, AppleTV, Android, Roku, Web, STV</td>
+          </tr>
+          <tr>
+              <td translate="no" style="font-weight:bold">Système d'exploitation</td>
+              <td>Système d'exploitation complet (y compris la version) - exemple iOS 14</td>
+          </tr>
+          <tr>
+              <td translate="no" style="font-weight:bold">MFGR</td>
+              <td>le Fabricant de l'appareil ; (Web - navigateur de l'utilisateur)</td>
+          </tr>
+          <tr>
+              <td translate="no" style="font-weight:bold">MAQUETTE</td>
+              <td>Modèle d'appareil; (Web - version navigateur)</td>
+          </tr>
+          <tr>
+              <td translate="no" style="font-weight:bold">APP_ID</td>
+              <td>Identifiant de l'application (par exemple, l'identifiant de l'offre groupée) ; Web : domaine de l'application</td>
+          </tr>
+          <tr>
+              <td translate="no" style="font-weight:bold">LIEU</td>
+              <td>Code de langue ISO 639-1 (2 lettres) suivi d'un trait de soulignement et d'un code de pays ISO 3166-1 (2 lettres) (exemple en_us) - langue définie dans l'application</td>
+          </tr>
+          <tr>
+              <td translate="no" style="font-weight:bold">RDID</td>
+              <td>ID d'appareil réinitialisable (<code translate="no">tifa</code>: Samsung, <code translate="no">rida</code>: Roku, <code translate="no">a dit</code>: Android, etc. - voir <a href="#Device_identifiers">Identificateurs de périphérique</a> ci-dessous pour plus de valeurs) - si <strong>ciblage publicitaire limité</strong> est défini sur l'application, l'identifiant doit être composé uniquement de zéros (ce qui signifie qu'il est impossible d'identifier l'utilisateur/l'appareil)</td>
+          </tr>
+          <tr>
+              <td translate="no" style="font-weight:bold">IDTYPE</td>
+              <td>Saisissez un identifiant réinitialisable (<code translate="no">tifa</code>: Samsung, <code translate="no">rida</code>: Roku, <code translate="no">a dit</code>: Android, etc. - voir <a href="#Device_identifiers">Identificateurs de périphérique</a> ci-dessous pour plus de valeurs)</td>
+          </tr>
+          <tr>
+              <td translate="no" style="font-weight:bold">IS_LAT</td>
+              <td>Indicateur qui indique si le ciblage publicitaire limité est sélectionné par l'utilisateur : <code translate="no">0</code> si l'utilisateur n'a pas choisi de limiter le ciblage, <code translate="no">1</code> si vous limitez le ciblage des annonces</td>
+          </tr>
+          <tr>
+              <td translate="no" style="font-weight:bold">SID</td>
+              <td>Identifiant de session unique (réinitialisé à chaque démarrage de l'application). Ne dépend pas de la connexion/inscription de l'utilisateur. Le passage de l'état de premier plan à l'état d'arrière-plan ne modifie pas cet ID.</td>
+          </tr>
+      </tbody>
+		</table>
+
+		<h4 id="Device_identifiers">Identifiants de l'appareil</h4>
+		<ul>
+			<li>a ajouté : Android</li>
+			<li>afai : Amazone</li>
+			<li>tvOS : Apple TV (tvOS)</li>
+			<li>IDFA : Téléphones Apple (iOS)</li>
+			<li>rida : Roku</li>
+			<li>tifa : Samsung</li>
+			<li>vide : Vizio</li>
+			<li>msai : Xbox</li>
+		</ul>
+  </section>
+  {% raw %}
+  <section class="bcls-section">
+		<h2 id="VOD_steps">Étapes de la VOD</h2>
+		<h3>Partie Video Cloud - VOD</h3>
+		<ol class="bcls-tasklist-restart">
+			<li>
+				Créez une configuration d'annonce à partir du <a href="https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html">Page des paramètres d'annonce côté serveur dans Studio</a>:
+				<ol>
+					<li>
+						Cliquez sur <span class="blue-button">Créer une configuration d'annonce</span> et sélectionnez <strong>VOD</strong>
+						<figure class="bcls-figure">
+							<img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/create-vod-ad-config.png" alt="Create VOD Ad Config">
+							<figcaption class="bcls-caption--image">Créer une configuration d'annonce VOD</figcaption>
+						</figure>
+						<figure class="bcls-figure">
+							<img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/ssai-config-vod.png" alt="SSAI Configuration VOD">
+							<figcaption class="bcls-caption--image">Configuration SSAI VOD</figcaption>
+						</figure>
+					</li>
+					<li>Ajoutez un nom pour la configuration de l'annonce&lt;./li&gt;
+					<li>Sélectionnez votre réponse publicitaire - VMAP ou Vast est recommandé. Si vous utilisez Vast, vous devrez ajouter des points de repère aux vidéos pour spécifier où les coupures publicitaires doivent apparaître.</li>
+					<li>Collez votre tag d'emplacement publicitaire (de votre fournisseur d'annonces).</li>
+					<li>Copiez votre identifiant de configuration publicitaire, car vous en aurez besoin pour la configuration de la publicité Beacon.</li>
+				</ol>
+			</li>
+			</ol>
+			<h3>Partie balise - VOD</h3>
+			<ol class="bcls-tasklist-restart">
+				<li>
+        Ouvrez l'interface utilisateur de Beacon Classic et accédez à l'onglet Publicité :
+        <ol>
+          <li>
+						Cliquez sur <span class="button-teal">Ajouter une nouvelle configuration</span>
+						<figure class="bcls-figure">
+							<img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/advertising-config-vod.png" alt="Beacon Ad Configuration">
+							<figcaption class="bcls-caption--image">VOD sur la configuration des annonces Beacon</figcaption>
+						</figure>
+					</li>
+          <li>Nommez la configuration de l'annonce</li>
+          <li>Sélectionner <strong>Brightcove SSAI</strong></li>
+          <li>Coller dans le <strong>ID de configuration d'annonce SSAI</strong> dans <strong>ID de configuration d'annonce VOD</strong></li>
+        </ol>
+      </li>
+      <li>
+        Une fois que vous avez configuré votre configuration publicitaire dans Studio et Beacon Classic, vous devez implémenter les paramètres côté client qui seront transmis au serveur publicitaire du client. Les paramètres côté client peuvent être transmis dans les API de lecture (fournies dans le point d'entrée VMAP/Manifest) - ceux-ci seront disponibles pour l'infrastructure SSAI sous la forme de <code translate="no">{{url.xxx}}</code> macros où le xxx correspond à la clé de paramètre qui est soumise dans l'URL de l'API de lecture.
+        <ol>
+          <li>Saisissez les paramètres de ciblage des annonces dans le <strong>Cible publicitaire</strong> champ à Beacon. L'entrée sera une chaîne sous forme de requête. Exemple: <code translate="no">d={PLATFORM}&amp;os={OS}&amp;homme={MFGR}&amp;mo={MODEL}&amp;appid={APP_ID}&amp;lan={LOCALE}&amp;a fait={RDID}&amp;dt={IDTYPE}&amp;lat={IS_LAT}&amp;sid={SID}</code></li>
+          <li><strong>Vous pouvez configurer les clés avant le signe égal</strong>. Ils <strong>DOIT</strong> correspondent aux clés ajoutées au tag d'emplacement publicitaire SSAI.</li>
+          <li>Ensuite, mettez à jour votre tag d'emplacement publicitaire dans le <strong>Paramètres SSAI Studio</strong> page. Voici un exemple de paramètres qui ont été saisis dans le ciblage publicitaire Beacon Classic et ajoutés à la balise publicitaire SSAI : <code translate="no">d={PLATFORM}&amp;os={OS}&amp;appid={APP_ID}&amp;a fait={RDID}&amp;dt={IDTYPE}&amp;lat={IS_LAT}&amp;sid={SID}</code></li>
+          <li><strong>Ces paramètres sont traduits en ceci dans ce tag d'emplacement publicitaire :</strong> <code translate="no">https://ads.brightcove.com/ads?tech=dfpadrules&amp;dur=15&amp;pre=3&amp;d={{url.d}}&amp;os={{url.os}}&amp;appid={{url.appid}}&amp;a fait={{url.did}}&amp;dt={{url.dt}}&amp;lat={{url.latl}}&amp;sid={{url.sid}}</code></li>
+        </ol>
+      </li>
+		</ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Live_steps">Étapes en direct</h2>
+    <ol class="bcls-tasklist-restart">
+			<li>
+				Tout d'abord, construisez votre chaîne de paramètres de ciblage publicitaire, car vous en aurez besoin à la fois dans les configurations SSAI et Beacon. Vous pouvez réutiliser les paramètres pour la VOD ou sélectionner un ensemble différent.
+				<p>Exemple:</p>
+				<pre><code translate="no">ip={{client.ipaddress}}&amp;num={{random.int32}}&amp;d={{PLATFORM}}&amp;os={{OS}}&amp;a fait={{RDID}}&amp;dt={{IDTYPE}}&amp;lat={{IS_LAT}}</code></pre>
+			</li>
+      <li>
+        Créer une configuration d'annonce à partir de <a href="https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html">la page des paramètres d'annonce côté serveur dans Studio</a>:
+        <ol>
+          <li>
+						Cliquez sur <span class="blue-button">Créer une configuration d'annonce</span> et sélectionnez <strong>Habitent</strong>
+						<figure class="bcls-figure">
+							<img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/create-live-ad-config.png" alt="Create Live Ad Config">
+							<figcaption class="bcls-caption--image">Créer une configuration d'annonce en direct</figcaption>
+						</figure>
+						<figure class="bcls-figure">
+							<img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/ssai-config-live.png" alt="SSAI Configuration Live">
+							<figcaption class="bcls-caption--image">Configuration SSAI en direct</figcaption>
+						</figure>
+
+					</li>
+					<li>Ajouter un nom pour la configuration de l'annonce</li>
+					<li>Sélectionner <strong>Vaste</strong> votre réponse à l'annonce</li>
+					<li>
+						Collez votre tag d'emplacement publicitaire, <strong>en ajoutant votre chaîne de requête des paramètres de ciblage des annonces</strong>.
+						<p>Exemple:</p>
+						<pre><code translate="no">https://ad-provider-host.com/path/to/ad-handler?ip={{client.ipaddress}}&amp;num={{random.int32}}&amp;d={{PLATFORM}}&amp;os={{OS}}&amp;a fait={{RDID}}&amp;dt={{IDTYPE}}&amp;lat={{IS_LAT}}</code></pre>
+					</li>
+					<li>Copiez votre ID de configuration publicitaire pour les configurations Beacon Advertising</li>
+        </ol>
+      </li>
+      <li>
+        Ouvrez l'interface utilisateur Beacon Classic et accédez à l'onglet Publicité
+        <ol>
+          <li>
+						Cliquez sur <span class="button-teal">Ajouter une nouvelle configuration</span>
+						<figure class="bcls-figure">
+							<img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/advertising-config-live.png" alt="Beacon Ad Configuration Live">
+							<figcaption class="bcls-caption--image">Configuration des annonces Beacon en direct</figcaption>
+						</figure>
+					</li>
+          <li>Nommez la configuration de l'annonce</li>
+          <li>Sélectionner <strong>Brightcove SSAI</strong></li>
+          <li>Collez l'ID de configuration d'annonce SSAI dans <strong>ID de configuration d'annonce en direct</strong></li>
+        </ol>
+      </li>
+      <li>
+				Collez votre chaîne de paramètres de ciblage publicitaire dans le <strong>Cible publicitaire</strong> champ.
+				<p>Exemple:</p>
+				<pre><code translate="no">ip={{client.ipaddress}}&amp;num={{random.int32}}&amp;d={{PLATFORM}}&amp;os={{OS}}&amp;a fait={{RDID}}&amp;dt={{IDTYPE}}&amp;lat={{IS_LAT}}</code></pre>
+			</li>
+		</ol>
+  </section>
+  <!-- <section class="bcls-section">
+    <h2 id="Limitations">Limitations</h2>
+    <ul>
+      <li>There currently isn’t a way to handle Device ID on the web so we are not passing that information to SSAI. We are still defining how we will handle it, and the doc will be updated once Device ID for the web is implemented.</li>
+    </ul>
+  </section> -->
+  {% endraw %}
+</article>

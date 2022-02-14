@@ -1,0 +1,249 @@
+- section:
+  name: Accueil
+  url: /index.html
+- section:
+  name: 'Commencer'
+  url: '/getting-started/index.html'
+  docs:
+    - name: 'Guide d'apprentissage'
+      url: '/getting-started/learning-guide-bc-beacon.html'
+    - name: 'Phases de mise en œuvre'
+      url: '/getting-started/implementation-phases.html'
+    - name: 'Considérations relatives à la conception d'applications'
+      url: '/getting-started/app-design-considerations.html'
+    - name: 'Conception d'applications - Architecture d'informations'
+      url: '/getting-started/creating-your-app-design-info-architecture.html'
+    - name: 'Conception d'applications - Options de mise en page'
+      url: '/getting-started/creating-your-app-design-layout-options.html'
+    - name: 'Meilleures pratiques de conception'
+      url: '/getting-started/design-best-practices.html'
+- section:
+  name: Synchronisation avec Video Cloud
+  url: /syncing-with-video-cloud/index.html
+  docs:
+    - name: Création de champs personnalisés Video Cloud
+      url: /syncing-with-video-cloud/vc-custom-fields.html
+    - name: Forcer une synchronisation
+      url: /syncing-with-video-cloud/forcing-a-sync.html
+- section:
+  name: Utilisation de la balise Brightcove
+  url: /using-brightcove-beacon/index.html
+  docs:
+    - name: Ajouter une bande-annonce à un film
+      url: /using-brightcove-beacon/adding-trailer-movie.html
+    - name: Ajouter un carrousel à une page
+      url: /using-brightcove-beacon/adding-to-page.html
+    - name: 'Aperçu: Canaux de diffusion en nuage'
+      url: /using-brightcove-beacon/cloud-playout/cloud-playout-overview.html
+    - name: Création d'un canal de diffusion dans le cloud
+      url: /using-brightcove-beacon/cloud-playout/cloud-playout-stream-vod.html
+    - name: Ajouter du contenu à une chaîne Cloud Playout
+      url: /using-brightcove-beacon/cloud-playout/cloud-playout-add-content.html
+    - name: Superpositions d'images statiques
+      url: /using-brightcove-beacon/cloud-playout/static-image-overlays.html
+    - name: Utilisation des actions de canal
+      url: /using-brightcove-beacon/cloud-playout/using-channel-actions.html
+    - name: Ajout de pare-chocs à Cloud Playout
+      url: /using-brightcove-beacon/cloud-playout/adding-bumpers-to-vod.html
+    - name: Monétisation de la diffusion dans le cloud
+      url: /using-brightcove-beacon/cloud-playout/enabling-server-side-ads.html
+    - name: Ajout d'annonces mid-roll à une chaîne
+      url: /using-brightcove-beacon/cloud-playout/mid-roll-ad-insertion.html
+    - name: Publication d'une chaîne Cloud Playout
+      url: /using-brightcove-beacon/cloud-playout/publish-channel-beacon.html
+    - name: Affichage de la sortie du canal et de l'analyse
+      url: /using-brightcove-beacon/cloud-playout/viewing-channel-output-and-analytics.html
+    - name: Création d'un canal balise
+      url: /using-brightcove-beacon/creating-a-channel.html
+    - name: Création d'un guide électronique des programmes (EPG)
+      url: /using-brightcove-beacon/electronic-program-guides.html
+    - name: Création d'une nouvelle page
+      url: /using-brightcove-beacon/creating-a-page.html
+    - name: Création d'une liste de lecture
+      url: /using-brightcove-beacon/creating-a-playlist.html
+    - name: 'Création de séries/saisons/épisodes'
+      url: /using-brightcove-beacon/series-seasons-episodes.html
+    - name: Auto-configuration de Google Analytics
+      url: /using-brightcove-beacon/ga-self-configuration.html
+    - name: Inclure les pages non configurables
+      url: /using-brightcove-beacon/including-non-configurable-pages.html
+    - name: Présentation des pages
+      url: /using-brightcove-beacon/introducing-pages.html
+    - name: Diffuser un événement en direct
+      url: /using-brightcove-beacon/streaming-live-event.html
+    - name: Diffuser des VOD sur une chaîne
+      url: /using-brightcove-beacon/streaming-vods-to-a-channel.html
+    - name: Utilisation des outils
+      url: /using-brightcove-beacon/tools.html
+    - name: Affichage des données analytiques
+      url: /using-brightcove-beacon/viewing-analytics-data.html
+- section:
+  name: 'Monétisation'
+  url: '/monetization/index.html'
+  docs:
+    - name: Général
+      url: '/monetization/general/index.html'
+      docs:
+        - name: Créer un compte Stripe
+          url: /monetization/general/creating-stripe-account.html
+        - name: Création d'un forfait d'abonnement
+          url: /monetization/general/creating-subscription-package.html
+        - name: Création de codes promotionnels
+          url: /monetization/general/promo-codes.html
+        - name: Champs personnalisés pour la monétisation
+          url: /monetization/general/vc-custom-fields.html
+        - name: Implémentation d'AuthVOD
+          url: /monetization/general/implementing-authvod.html
+        - name: Comprendre les options de monétisation
+          url: /monetization/general/monetization-options.html
+        - name: Utiliser un forfait d'abonnement
+          url: /monetization/general/using-subscription-package.html
+    - SSAIname: 
+      url: '/monetization/ssai/index.html'
+      docs:
+        - name: 'Création d'une publicité'
+          url: '/monetization/ssai/advertisement.html'
+        - name: 'Configuration des paramètres d'annonce côté serveur'
+          url: '/monetization/ssai/configuring-server-side-ad-settings.html'
+        - name: 'Mettre en œuvre Live SSAI'
+          url: '/monetization/ssai/live-ssai.html'
+        - name: Mise en œuvre de la VOD SSAI
+          url: '/monetization/ssai/vod-ssai.html'
+        - name: 'Ciblage publicitaire des applications Beacon'
+          url: '/monetization/ssai/beacon-apps-ad-targeting.html'
+- section:
+  name: 'Boutique en ligne de balises'
+  url: '/beacon-web-store/index.html'
+  docs:
+    - name: 'Aperçu: Boutique en ligne de balises Brightcove'
+      url: '/beacon-web-store/beacon-webstore-overview.html'
+    - name: 'Intégration avec la boutique en ligne Beacon'
+      url: '/beacon-web-store/integration-details.html'
+    - name: 'Référence du Webhook du magasin Beacon'
+      url: '/beacon-web-store/beacon-store-webhook-reference.html'
+- section:
+  name: 'Création de vos applications'
+  url: '/creating-your-apps/index.html'
+  docs:
+    - name: 'Général'
+      url: '/creating-your-apps/general/index.html'
+      docs:
+        - name: 'Informations communes requises'
+          url: '/creating-your-apps/general/common-required-info.html'
+        - name: 'Guide de validation des applications de l'appareil'
+          url: '/creating-your-apps/general/device-apps-validation-guide.html'
+        - name: 'Ressources d'abonnement intégrées à l'application'
+          url: '/creating-your-apps/general/in-app-subscription-resources.html'
+        - name: 'Liens vers les abonnements App Stores'
+          url: '/creating-your-apps/general/links-subscriptions.html'
+    - Androidname: ''
+      url: '/creating-your-apps/android/index.html'
+      docs:
+        - name: 'Soumettre de nouvelles applications à l'Android Store'
+          url: '/creating-your-apps/android/submitting-to-android.html'
+        - name: 'Mise à jour des applications Android vers Brightcove Beacon'
+          url: '/creating-your-apps/android/updating-android-apps-to-bcb.html'
+        - name: 'Ajouter des abonnements à Android'
+          url: '/creating-your-apps/android/adding-subscriptions-in-android.html'
+        - name: 'Améliorer la pertinence de la recherche dans le Play Store Android'
+          url: '/creating-your-apps/android/improving-relevance-android.html'
+        - name: 'Installation d'une version de test Android'
+          url: '/creating-your-apps/android/installing-android-test-build.html'
+        - name: 'Gestion des abonnements Google Partie 1'
+          url: '/creating-your-apps/android/managing-google-subscriptions-1.html'
+        - name: 'Gestion des abonnements Google Partie 2'
+          url: '/creating-your-apps/android/managing-google-subscriptions-2.html'
+    - name: 'Télé d'incendie'
+      url: '/creating-your-apps/fire-tv/index.html'
+      docs:
+        - name: 'Installation d'une version de test Fire TV'
+          url: '/creating-your-apps/fire-tv/installing-fire-tv-test-build.html'
+        - name: 'Soumission à l'Amazon Store'
+          url: '/creating-your-apps/fire-tv/submitting-to-amazon.html'
+    - iOS/tvOSname: ''
+      url: '/creating-your-apps/ios-tvos/index.html'
+      docs:
+        - name: 'Installation d'une version de test iOS/tvOS'
+          url: '/creating-your-apps/ios-tvos/installing-ios-test-build.html'
+        - name: 'Soumission à l'Apple Store'
+          url: '/creating-your-apps/ios-tvos/submitting-to-apple.html'
+    #    - LGname: ''
+    #      url: '/creating-your-apps/lg/index.html'
+    #      docs:
+    #        - name: 'Soumission au magasin LG (webOS)'
+    #          url: '/creating-your-apps/lg/submitting-to-lg.html'
+    #- Panasonicname: ''
+    #  url: '/creating-your-apps/panasonic/index.html'
+    #  docs:
+    #    - name: 'Soumission à la boutique Panasonic'
+    #      url: '/creating-your-apps/panasonic/submitting-to-panasonic.html'
+    - Rokuname: ''
+      url: '/creating-your-apps/roku/index.html'
+      docs:
+        - name: 'Configuration des produits In-Channel dans Roku'
+          url: '/creating-your-apps/roku/configuring-inchannel-products.html'
+        - name: 'Installation d'une version de test Roku'
+          url: '/creating-your-apps/roku/installing-roku-test-build.html'
+        - name: 'Soumission à la boutique Roku'
+          url: '/creating-your-apps/roku/submitting-to-roku.html'
+    - Samsungname: ''
+      url: '/creating-your-apps/samsung/index.html'
+      docs:
+        - name: 'Devenir partenaire Samsung'
+          url: '/creating-your-apps/samsung/samsung-partner.html'
+        - name: 'Soumission au Samsung Store'
+          url: '/creating-your-apps/samsung/submitting-to-samsung.html'
+- section:
+  name: Les références
+  url: /references/index.html
+  docs:
+    - name: Marquer les applications Brightcove Beacon
+      url: /references/branding-beacon-apps.html
+    - name: Paramètres de configuration communs
+      url: /references/common-configuration-settings.html
+    - name: 'Glossaire'
+      url: '/references/glossary.html'
+    - name: 'Comment Brightcove Beacon obtient les données'
+      url: '/references/how-beacon-gets-data.html'
+    - name: 'Images et leurs spécifications'
+      url: '/references/image-requirements.html'
+    - name: 'Problèmes connus'
+      url: '/references/known-issues.html'
+    - name: 'Mises à jour du produit'
+      url: '/references/product-updates.html'
+    - name: 'Limitations des actifs distants'
+      url: '/references/remote-asset-limitations.html'
+    - name: 'Tâches effectuées dans Video Cloud'
+      url: '/references/beacon-tasks-in-vc.html'
+- section:
+  name: Entraînement
+  url: /training/index.html
+  docs:
+    - name: Utilisation de vidéos/champs personnalisés Video Cloud
+      url: /training/training-demand-custom-fields.html
+    - name: Conception de la mise en page de l'application
+      url: /training/training-demand-design-layout.html
+    - name: Création et utilisation de listes de lecture
+      url: /training/training-demand-playlists.html
+    - name: Création de séries, saisons et épisodes
+      url: /training/training-demand-series-seasons-episodes.html
+    - name: Implémentation des publicités VOD côté serveur
+      url: /training/training-demand-vod-ssai.html
+    - name: Publication de l'application Android sur le Play Store
+      url: /training/training-demand-publish-android-app.html
+    - name: Affichage des données analytiques
+      url: /training/training-demand-viewing-analytics.html
+    - name: Diffuser un événement en direct sur Brightcove Beacon
+      url: /training/training-demand-streaming-live-bc-beacon.html
+- section:
+  name: 'Soutien'
+  url: '/support/index.html'
+  docs:
+    - name: 'Affichage de la page d'état du système Brightcove'
+      url: '/support/viewing-brightcove-system-status-page.html'
+    - name: 'Contacter le service commercial'
+      url: '/support/contact-sales.html'
+    - name: 'Ouvrir un dossier d'assistance'
+      url: '/support/opening-case-with-brightcove-support.html'
+    - name: 'Réinitialiser votre mot de passe de portail d'assistance'
+      url: '/support/reset-support-portal-password.html'

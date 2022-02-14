@@ -1,0 +1,73 @@
+---
+title: Description "Créer une annonce" : "Dans cette rubrique, vous apprendrez à créer une configuration de publicité à laquelle vous pouvez ajouter du contenu vidéo."
+
+parent: "Monetization"
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="Overview">Aperçu</h2>
+    <p>Pour créer une configuration de publicité, vous devrez procéder comme suit :</p>
+    <ul>
+      <li>Obtenez une URL de serveur de tags d'emplacement publicitaire auprès de votre fournisseur de services publicitaires. Cela sera utilisé dans Video Cloud Studio pour créer votre configuration publicitaire SSAI.</li>
+      <li>Dans Video Cloud Studio, créez votre configuration publicitaire SSAI. À la fin de la tâche, vous copierez l'ID du serveur publicitaire pour créer votre configuration de publicité dans Brightcove Beacon Classic.</li>
+      <li>Dans Brightcove Beacon Classic, créez votre configuration publicitaire, que vous pourrez ensuite appliquer à votre contenu vidéo.</li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="section-name">Créer un ID de configuration d'annonce SSAI</h2>
+    <p>Suivez ces étapes pour créer une configuration d'annonce SSAI :</p>
+    <ol class="bcls-tasklist-restart">
+      <li>Dans Video Cloud Studio, accédez à <strong>Admin → Paramètres d'annonce côté serveur</strong>.</li>
+      <li>
+        Du <span class="blue-button">Créer une configuration d'annonce</span> liste déroulante, sélectionnez <strong>VOD</strong>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/create-vod-ad-config.png" alt="Create VOD Ad Config">
+          <figcaption class="bcls-caption--image">Créer une configuration d'annonce VOD</figcaption>
+        </figure>
+      </li>
+      <li>Ajoutez un nom pour la configuration de l'annonce.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/advertisement/ssai-config-vod.png" alt="SSAI Configuration VOD">
+          <figcaption class="bcls-caption--image">Configuration SSAI VOD</figcaption>
+        </figure>
+      </li>
+      <li>Sélectionnez votre réponse publicitaire - VMAP ou VAST est recommandé. Si vous utilisez VAST, vous devrez ajouter des points de repère aux vidéos pour spécifier où les coupures publicitaires doivent apparaître.</li>
+      <li>Collez votre tag d'emplacement publicitaire.</li>
+      <li>Cliquez sur <strong>sauvegarder</strong>.</li>
+      <li>Recherchez votre nouvelle configuration d'annonce dans le tableau et copiez votre ID de configuration d'annonce. Vous aurez besoin de cette valeur pour la configuration de la publicité Beacon.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/ad-targeting/copy-ad-config-id.png" alt="copy ad config ID">
+          <figcaption class="bcls-caption--image">Copier l'ID de configuration d'annonce</figcaption>
+        </figure>
+      </li>
+    </ol>
+  </section>
+
+
+  <section class="bcls-section">
+    <h2 id="Advertisement">Créer une configuration de publicité</h2>
+    <p>Pour créer une configuration de publicité, procédez comme suit :</p>
+    <ol class="bcls-tasklist">
+      <li>Dans Brightcove Beacon Classic, dans la barre de navigation supérieure, sélectionnez <strong>Publicité</strong> .
+        <figure class="bcls-figure"> <img class="bcls-image" src="/assets/images/using-bcb/advertisement/new-advertisement.png" alt="New advertisement" />
+          <figcaption class="bcls-caption--image">Nouvelle annonce</figcaption>
+        </figure>
+      </li>
+      <li>
+        Cliquez sur <span class="button-teal">Ajouter une nouvelle configuration</span>.
+      </li>
+      <li>Nommez la configuration de l'annonce.</li>
+      <figure class="bcls-figure">
+        <img class="bcls-image" src="/assets/images/using-bcb/advertisement/advertising-configuration.png" alt="Beacon Ad Configuration Live">
+        <figcaption class="bcls-caption--image">Configuration des annonces Beacon en direct</figcaption>
+      </figure>
+      <li>Pour le <strong>Fournisseur</strong> sélectionner <strong>Brightcove SSAI</strong></li>
+      <li>Coller dans le <strong>ID de configuration d'annonce SSAI</strong> copié dans les étapes ci-dessus dans <strong>ID de configuration d'annonce VOD</strong>.</li>
+      <li>Cliquez sur <span class="button-teal">Créer une nouvelle publicité</span>.</li>
+    </ol>
+  </section>
+</article>

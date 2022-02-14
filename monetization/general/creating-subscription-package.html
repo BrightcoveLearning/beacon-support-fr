@@ -1,0 +1,183 @@
+---
+title: Création d'un forfait d'abonnement
+parent: Monetization
+---
+
+
+<article class="bcls-article">
+  <h1>Création d'un forfait d'abonnement</h1>
+  <summary>Dans cette rubrique, vous apprendrez à configurer un forfait d'abonnement vidéo à l'aide de la <strong>Commerce</strong> onglet de Brightcove Beacon. Le forfait d'abonnement met en œuvre la monétisation SVOD (vidéo à la demande par abonnement). Pour savoir comment appliquer le forfait d'abonnement aux vidéos, consultez le <a href="/monetization/using-subscription-package.html">Utiliser un forfait d'abonnement</a> document.
+  </summary>
+  <section class="bcls-section">
+    <h2 id="Overview">Aperçu</h2>
+    <p>
+      Un forfait d'abonnement définit comment un ensemble particulier de vidéos peut être acheté par vos applications' les clients. Lors de la création du package, vous pouvez, par exemple, configurer les éléments suivants :
+    </p>
+    <ul>
+      <li>La fréquence de facturation</li>
+      <li>Définir si la publicité est prise en charge et la configuration publicitaire à utiliser</li>
+      <li>Méthodes de payement</li>
+      <li>Nombre maximum de flux pouvant être lus simultanément par un utilisateur avec le package</li>
+      <li>Dates de début et de fin d'achat du package</li>
+      <li>Appareils et géolocalisations autorisés pour visionner des vidéos dans le package</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Steps to create a package">Étapes pour créer un package</h2>
+    <p>Suivez les étapes suivantes pour créer un nouveau package :</p>
+    <ol class="bcls-tasklist">
+      <li>
+        Dans Brightcove Beacon, sélectionnez le <strong>Commerce</strong> onglet, assurez-vous <strong>Paquets</strong> est sélectionné dans la navigation de gauche, puis cliquez sur <strong>Ajouter un nouveau paquet</strong> .
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/creating-subscription-package/initial-menu-selections.png" alt="initial menu selections" />
+        </figure>
+      </li>
+      <li>
+        Sur le <strong>Emballer</strong> (capture d'écran ci-dessous), complétez les étapes suivantes :
+        <ul>
+          <li>
+            <strong>Nom</strong> : Le nom du package utilisé dans les champs personnalisés de Video Cloud pour une vidéo.
+          </li>
+          <li>
+            <strong>Fréquence de facturation</strong> : Choisissez la fréquence de facturation de ce forfait.
+          </li>
+          <li>
+            <strong>Période d'essai</strong> : La période d'essai de ce forfait. Entrer <strong>0</strong> sans période d'essai.
+          </li>
+          <li>
+            <strong>Statut</strong> : Choisissez si vous souhaitez que le package soit publié afin qu'il soit disponible pour utilisation. Notez que vous ne pourrez pas publier le package tant qu'au moins un mode de paiement ne sera pas sélectionné.
+          </li>
+          <li>
+            <strong>Publicité</strong> : Choisissez si vous souhaitez utiliser des publicités avec ce package.
+          </li>
+          <li>
+            <strong>Fournisseurs d'annonces</strong> : Si vous avez choisi d'utiliser des publicités à l'étape précédente, choisissez le fournisseur de publicité. Cette liste déroulante est remplie avec les configurations de publicité répertoriées dans le <strong>Publicité</strong> section de Brightcove Beacon.
+            <!-- See the <a href="/using-brightcove-beacon/advertisement.html"> Advertisement </a> document for details on advertisement configurations. -->
+          </li>
+          <li>
+            <strong>Modes de paiement à utiliser</strong> : Sélectionnez les méthodes de paiement que vous souhaitez utiliser avec ce forfait. Notez que pour chaque méthode sélectionnée, une section s'ouvrira en dessous de la liste des méthodes de paiement, que vous devez remplir pour chaque méthode sélectionnée. La capture d'écran ci-dessous montre <strong>Rayure (en jaune)</strong> et <strong>Apple Store (en rouge)</strong> sont sélectionnés.
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/using-bcb/creating-subscription-package/payment-method-details.png" alt="payment method details" />
+            </figure>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Clique le <strong>Créer un package</strong> pour enregistrer la configuration actuelle de votre package.
+      </li>
+      <li>
+        Sur le <strong>Données textuelles</strong> onglet, procédez comme suit : <ul>
+          <li><strong>Nom du pack</strong> : Nom affiché aux utilisateurs.</li>
+          <li>
+            <strong>Gros titre</strong> : Titre affiché aux utilisateurs, par exemple <em>Spécial vacances !</em> .
+          </li>
+        </ul>
+      </li>
+      <li>
+        Clique le <strong>Créer un package</strong> pour enregistrer la configuration actuelle de votre package.
+      </li>
+      <li>
+        Sur le <strong>Données non textuelles</strong> onglet, fournissez une image à utiliser à côté du nom du package.
+        <!-- The size of the image should be !!!!!!!!!!!!!!!!. -->
+      </li>
+      <li>
+        Clique le <strong>Créer un package</strong> pour enregistrer la configuration actuelle de votre package.
+      </li>
+      <li>
+        Les <strong>Teneur</strong> onglet n'est pas à utiliser pour le moment.
+      </li>
+      <li>
+        Sur le <strong>Ruisseaux</strong> onglet, procédez comme suit : <ul>
+          <li>
+            <strong>Flux max.</strong> : Nombre maximal d'appareils connectés pouvant diffuser en continu en même temps.
+          </li>
+          <li>
+            <strong>Nombre maximal d'appareils</strong> : Nombre maximal d'appareils connectés pouvant avoir des connexions actives. <aside class="bcls-aside bcls-aside--information"> Les deux paramètres ci-dessus sont également définis globalement, utilisez donc ces paramètres UNIQUEMENT SI vous souhaitez remplacer les paramètres globaux de ce package. </aside>
+          </li>
+          <li>
+            <strong>Flux avancés</strong> : Réglez ceci sur <strong>Oui</strong> si vous souhaitez personnaliser les droits définis par ce package. Les modifications disponibles sont illustrées dans la capture d'écran suivante :
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/using-bcb/creating-subscription-package/advanced-stream-rights.png" alt="advanced stream rights" />
+            </figure>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Clique le <strong>Ajouter un nouveau droit</strong> pour enregistrer vos droits personnalisés nouvellement configurés.
+      </li>
+      <li>
+        Clique le <strong>Créer un package</strong> pour enregistrer la configuration actuelle de votre package.
+      </li>
+    </ol>
+    <p>C'est tout pour la création du package !</p>
+  </section>
+  <!-- <section class="bcls-section"> <h2 id="Using_the_package_in_Video_Cloud"> Using the package in Video Cloud </h2> <p> Although the package is created in Brightcove Beacon, it is not applied to content in there. To use the package, and apply it to video content you use Video Cloud custom fields. </p> </section> -->
+  <section class="bcls-section">
+    <h2 id="Creating_a_Stripe_Coupon">Créer un coupon Stripe</h2>
+    <p>
+      Des coupons peuvent être créés pour offrir une remise, soit une remise monétaire fixe, soit une remise en pourcentage, qui peut être appliquée lors de l'achat d'un forfait.
+    </p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        Dans Brightcove Beacon, sélectionnez le <strong>Commerce</strong> onglet, puis cliquez sur <strong>Coupons par bande</strong> et enfin cliquez <strong>Ajouter un nouveau bon</strong>.
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/creating-subscription-package/coupon-menu-selection.png" alt="coupon menu selections" />
+        </figure>
+      </li>
+      <li>
+        Sur le <strong>Créer de nouveaux coupons</strong> formulaire (capture d'écran ci-dessous), remplissez les éléments suivants :
+        <ul>
+          <li>
+            <strong>Identifiant</strong> : Code que les téléspectateurs saisiront dans l'application Brightcove Beacon pour utiliser le coupon
+          </li>
+          <li><strong>Nom</strong> : Un nom convivial pour le coupon qui peut être affiché dans les factures</li>
+          <li>
+            <strong>Durée</strong> : Choisissez parmi <strong>Une fois que</strong> , <strong>Pour toujours</strong> ou <strong>Répéter</strong>;<br /> Si <strong>Répéter</strong> est sélectionné, puis définissez le nombre de mois pendant lesquels il peut être utilisé à plusieurs reprises.
+          </li>
+          <li>
+            Pour <strong>Type de remise</strong> sélectionnez l'un des éléments suivants :
+            <ul>
+              <li>
+                <strong>Montant monétaire</strong>: Saisissez la valeur et la devise du coupon
+              </li>
+              <li>
+                <strong>Pourcentage</strong>: Entrez le pourcentage de réduction que le coupon portera
+              </li>
+            </ul>
+            <p>
+              Exemple: Si la remise est de 3 mois gratuits, définissez le <strong>Durée</strong> à <strong>Répéter</strong> avec 3 mois et définir le <strong>Type de remise</strong> avec <strong>Pourcentage</strong> de 100% </p>
+          </li>
+          <li>
+            <strong>Date limite (UTC)</strong> : Sélectionnez la dernière date à laquelle le coupon peut être utilisé
+          </li>
+          <li>
+            <strong>Rédemption maximale</strong> : Saisissez le nombre maximum d'échanges pour le coupon ; par exemple, seuls 50 clients peuvent utiliser le coupon
+          </li>
+          <li>
+            <strong>Sélectionnez les forfaits</strong> : Sélectionnez les forfaits auxquels le coupon peut être appliqué ; si vous ne sélectionnez pas de forfait le coupon peut être appliqué à tous les forfaits<br />
+            Exemple: Le coupon n'est valable que si vous achetez l'abonnement annuel
+          </li>
+        </ul>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/using-bcb/creating-subscription-package/new-coupon-form.png" alt="coupon form" />
+        </figure>
+      </li>
+      <li>
+        <p>
+          Assurez-vous de cliquer sur le <strong>sauvegarder</strong> bouton pour enregistrer votre nouveau coupon.
+        </p>
+      </li>
+    </ol>
+    <p>
+      Dans l'application Brightcove Beacon lorsqu'un achat de forfait a lieu, les téléspectateurs pourront saisir le coupon <strong>Identifiant</strong>: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/creating-subscription-package/use-coupon.png" alt="use coupon form" />
+    </figure>
+    <p>
+      Vous pouvez également créer des coupons directement dans votre compte Stripe, puis les utiliser dans Brightcove Beacon.
+    </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/using-bcb/creating-subscription-package/stripe-coupon-form.png" alt="use coupon form" />
+    </figure>
+  </section>
+</article>
